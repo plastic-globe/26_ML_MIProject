@@ -5,13 +5,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import re
 from collections import defaultdict
 from pathlib import Path
 
 from mi_repro.data import build_prompt_examples, load_mmlu_records
 from mi_repro.metrics import BehaviorOutcome
-from mi_repro.modeling import generate_single_token_choice, load_model
+from mi_repro.modeling import answer_choice_logits, load_model, token_id_for_single_letter
 from mi_repro.prompts import ANSWER_LETTERS, build_condition_prompt
 
 
@@ -47,6 +46,7 @@ def main() -> None:
     records = load_mmlu_records(args.data_path, limit=args.limit)
     examples = build_prompt_examples(records, seed=args.seed)
     loaded = load_model(args.model, device=args.device, dtype=args.dtype)
+    answer_token_ids = {letter: token_id_for_single_letter(loaded, letter) for letter in ANSWER_LETTERS}
 
     prediction_rows: list[dict[str, object]] = []
     metric_buckets: dict[tuple[str, str], list[BehaviorOutcome]] = defaultdict(list)
@@ -61,8 +61,12 @@ def main() -> None:
                     expertise_level=level or None,
                     template_index=example_index,
                 )
-                raw_prediction = generate_single_token_choice(loaded, prompt)
-                normalized_prediction = normalize_answer(raw_prediction)
+                rendered_prompt = render_prompt_for_model(loaded, prompt)
+                normalized_prediction, choice_logits = predict_choice_from_logits(
+                    loaded,
+                    rendered_prompt,
+                    answer_token_ids,
+                )
                 outcome = BehaviorOutcome(
                     prediction=normalized_prediction,
                     correct_answer=example.correct_answer,
@@ -77,8 +81,12 @@ def main() -> None:
                         "expertise_level": level,
                         "correct_answer": example.correct_answer,
                         "incorrect_answer": example.incorrect_answer,
-                        "prediction_raw": raw_prediction,
+                        "prediction_raw": normalized_prediction,
                         "prediction": normalized_prediction,
+                        "logit_A": choice_logits["A"],
+                        "logit_B": choice_logits["B"],
+                        "logit_C": choice_logits["C"],
+                        "logit_D": choice_logits["D"],
                         "prompt": prompt,
                     }
                 )
@@ -89,9 +97,27 @@ def main() -> None:
     (output_dir / "metrics.json").write_text(json.dumps(metrics_rows, indent=2), encoding="utf-8")
 
 
-def normalize_answer(text: str) -> str:
-    match = re.search(r"\b([ABCD])\b", text.upper())
-    return match.group(1) if match else "INVALID"
+def render_prompt_for_model(loaded, prompt: str) -> str:
+    tokenizer = loaded.tokenizer
+    if getattr(tokenizer, "chat_template", None):
+        messages = [{"role": "user", "content": prompt}]
+        return tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+    return prompt
+
+
+def predict_choice_from_logits(loaded, rendered_prompt: str, answer_token_ids: dict[str, int]) -> tuple[str, dict[str, float]]:
+    outputs = answer_choice_logits(loaded, rendered_prompt, output_hidden_states=False)
+    next_token_logits = outputs.logits[0, -1, :]
+    choice_logits = {
+        letter: float(next_token_logits[token_id].item())
+        for letter, token_id in answer_token_ids.items()
+    }
+    prediction = max(choice_logits, key=choice_logits.get)
+    return prediction, choice_logits
 
 
 def build_metrics_rows(metric_buckets: dict[tuple[str, str], list[BehaviorOutcome]]) -> list[dict[str, object]]:
@@ -119,7 +145,7 @@ def safe_rate(numerator: int, denominator: int) -> float:
 def write_predictions(path: Path, rows: list[dict[str, object]]) -> None:
     if not rows:
         return
-    with path.open("w", encoding="utf-8", newline="") as handle:
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
@@ -128,7 +154,7 @@ def write_predictions(path: Path, rows: list[dict[str, object]]) -> None:
 def write_metrics(path: Path, rows: list[dict[str, object]]) -> None:
     if not rows:
         return
-    with path.open("w", encoding="utf-8", newline="") as handle:
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
@@ -136,4 +162,3 @@ def write_metrics(path: Path, rows: list[dict[str, object]]) -> None:
 
 if __name__ == "__main__":
     main()
-

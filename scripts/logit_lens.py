@@ -119,7 +119,7 @@ def average(values):
 def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
     if not rows:
         return
-    with path.open("w", encoding="utf-8", newline="") as handle:
+    with path.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
         writer.writeheader()
         writer.writerows(rows)
@@ -127,4 +127,3 @@ def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
 
 if __name__ == "__main__":
     main()
-
