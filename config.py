@@ -1,7 +1,7 @@
 """Project-wide configuration values."""
 
 # Set this before running any Hugging Face based experiments.
-HF_TOKEN = "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"
+HF_TOKEN = ""
 
 # Optional API settings used by utils/APIKeyTester.py.
 OPENAI_KEYS = []
