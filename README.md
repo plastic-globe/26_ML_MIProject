@@ -376,24 +376,6 @@ python utils/ImprovementAnalysis.py
 
 其中 `pov` 文件名中的 `advanced / intermediate / beginner` 对应不同专业水平设定。
 
-## 注意事项
-
-### 1. 当前主流程推荐
-
-如果你只是想复现实验并继续改进，建议优先使用这条链路：
-
-1. `build_lib.py`
-2. `run_syco.py`
-3. `run_syco_logit_cot.py`
-4. `run_activation_steering.py`
-5. `run_prompt_mitigation.py` / `run_steering_sweep.py`
-
-### 2. 若干兼容性说明
-
-- Hugging Face 相关脚本统一依赖项目根目录下的 `config.py`
-- `run_syco_logit_cot.py` 中包含一些模型加载兼容性 patch，更适合在实际跑实验前先做小规模测试
-- `lib/pov/suffix/` 下同时存在 `third_pov/` 和 `three_pov/`，这是为了兼容已有命名
-
 ### 3. 辅助分析脚本
 
 `utils/SycophancyAnalysis.py` 与 `utils/EarlyDecodingAnalysis.py` 依赖已有实验输出文件做后处理；在首次运行前，请先确保对应输出目录中已经有 `.pkl` 结果。
