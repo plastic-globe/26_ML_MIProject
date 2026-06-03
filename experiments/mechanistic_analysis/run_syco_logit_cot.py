@@ -1,6 +1,7 @@
 import torch
 import pandas as pd
-#import config
+import sys
+from pathlib import Path
 from tqdm import tqdm
 import time
 from datetime import datetime
@@ -11,6 +12,12 @@ import traceback
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 import uuid
 import numpy as np
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+import config
 
 # Set up logging
 logging.basicConfig(filename='inference.log', level=logging.DEBUG,
@@ -193,10 +200,9 @@ def main():
     if question_type == "prefix_and_opinion" and not prefix_type:
         raise ValueError("For 'prefix_and_opinion' question_type, a prefix_type (e.g., 'academic' or 'behavior') must be specified.")
 
-    import os
-    hf_token = os.getenv("HF_TOKEN")
+    hf_token = config.HF_TOKEN
     if not hf_token:
-        raise ValueError("HF_TOKEN environment variable not set. Set it using 'export HF_TOKEN=your_token' or define it in config.py.")
+        raise ValueError("HF_TOKEN is not set in config.py.")
 
     try:
         print("Loading tokenizer...")
@@ -210,15 +216,15 @@ def main():
         print("Loading Transformers model...")
         logging.info("Loading Transformers model...")
         # Load configuration explicitly to verify
-        config = AutoConfig.from_pretrained(
+        model_config = AutoConfig.from_pretrained(
             model_name,
             token=hf_token,
             trust_remote_code=True,
             force_download=True,
             resume_download=False
         )
-        print(f"Model configuration: {config}")
-        logging.info(f"Model configuration: {config}")
+        print(f"Model configuration: {model_config}")
+        logging.info(f"Model configuration: {model_config}")
         
         
         
@@ -230,19 +236,19 @@ def main():
 
             
         # Patch configuration to avoid NoneType error
-        if not hasattr(config, 'parallel_style') or config.parallel_style is None:
-            config.parallel_style = "none"
+        if not hasattr(model_config, 'parallel_style') or model_config.parallel_style is None:
+            model_config.parallel_style = "none"
             logging.warning("Patched config.parallel_style to 'none'.")
-        if not hasattr(config, '_fsdp_config') or config._fsdp_config is None:
-            config._fsdp_config = {}  # Set to empty dict to disable FSDP
+        if not hasattr(model_config, '_fsdp_config') or model_config._fsdp_config is None:
+            model_config._fsdp_config = {}  # Set to empty dict to disable FSDP
             logging.warning("Patched config._fsdp_config to empty dict.")
-        if not hasattr(config, 'model_parallel') or config.model_parallel is None:
-            config.model_parallel = False  # Disable model parallelism
+        if not hasattr(model_config, 'model_parallel') or model_config.model_parallel is None:
+            model_config.model_parallel = False  # Disable model parallelism
             logging.warning("Patched config.model_parallel to False.")
 
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            config=config,
+            config=model_config,
             token=hf_token,
             trust_remote_code=True,
             torch_dtype=torch.float16,

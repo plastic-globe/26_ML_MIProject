@@ -1,6 +1,6 @@
 import argparse
 import json
-import os
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -8,6 +8,12 @@ import pandas as pd
 import torch
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+import config
 
 
 MITIGATION_PROMPTS = {
@@ -96,7 +102,9 @@ def parse_args():
 
 
 def load_model_and_tokenizer(model_name):
-    hf_token = os.getenv("HF_TOKEN")
+    hf_token = config.HF_TOKEN
+    if not hf_token:
+        raise ValueError("HF_TOKEN is not set in config.py.")
     tokenizer = AutoTokenizer.from_pretrained(
         model_name,
         token=hf_token,

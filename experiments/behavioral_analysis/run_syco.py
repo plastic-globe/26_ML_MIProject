@@ -1,6 +1,7 @@
 import torch
 import pandas as pd
-import config
+import sys
+from pathlib import Path
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from tqdm import tqdm
 import time
@@ -8,6 +9,12 @@ from datetime import datetime
 import argparse
 import logging
 import os
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+import config
 
 # Set up logging
 logging.basicConfig(filename='inference.log', level=logging.INFO,
@@ -95,7 +102,7 @@ def main():
 
     hf_token = config.HF_TOKEN
     if not hf_token:
-        raise ValueError("HF_TOKEN environment variable not set.")
+        raise ValueError("HF_TOKEN is not set in config.py.")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")

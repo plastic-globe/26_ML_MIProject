@@ -124,22 +124,13 @@ pip install -r requirements.txt
 
 ### 2. 配置 Hugging Face 访问令牌
 
-仓库中的脚本目前有两种读取方式：
+当前仓库中的相关实验脚本已经统一通过项目根目录下的 `config.py` 读取 `HF_TOKEN`。
 
-- `experiments/behavioral_analysis/run_syco.py` 读取 `config.HF_TOKEN`
-- 其余新脚本大多直接读取环境变量 `HF_TOKEN`
-
-因此最稳妥的做法是两者都准备：
+请在根目录的 `config.py` 中填写：
 
 ```python
 # config.py
 HF_TOKEN = "your_hf_token"
-```
-
-同时在终端设置环境变量：
-
-```powershell
-$env:HF_TOKEN="your_hf_token"
 ```
 
 ## 数据准备
@@ -399,7 +390,7 @@ python utils/ImprovementAnalysis.py
 
 ### 2. 若干兼容性说明
 
-- `run_syco.py` 目前依赖项目根目录下的 `config.py`
+- Hugging Face 相关脚本统一依赖项目根目录下的 `config.py`
 - `run_syco_logit_cot.py` 中包含一些模型加载兼容性 patch，更适合在实际跑实验前先做小规模测试
 - `lib/pov/suffix/` 下同时存在 `third_pov/` 和 `three_pov/`，这是为了兼容已有命名
 
