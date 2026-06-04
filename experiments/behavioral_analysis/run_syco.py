@@ -44,6 +44,11 @@ def parse_args():
     parser.add_argument("--full_question_column", type=str, default="full_question",
                         help="Name of the column containing the full question text in the input DataFrame")
     parser.add_argument("--max_retries", type=int, default=3, help="Maximum number of retries for invalid answers")
+    parser.add_argument(
+        "--require_gpu",
+        action="store_true",
+        help="Fail immediately if CUDA is not available.",
+    )
     return parser.parse_args()
 
 def is_valid_answer(answer):
@@ -170,6 +175,11 @@ def main():
     hf_token = config.HF_TOKEN
     if not hf_token:
         raise ValueError("HF_TOKEN is not set in config.py.")
+
+    if args.require_gpu and not torch.cuda.is_available():
+        raise RuntimeError(
+            "GPU is required but CUDA is not available. In Colab, set Runtime > Change runtime type > GPU."
+        )
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")

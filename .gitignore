@@ -5,13 +5,16 @@ __pycache__/
 *.log
 *.egg-info/
 .env
+.venv/
+.venv*/
+venv/
+env/
 
 # Outputs
 output/
-output_*/
 results/
 checkpoints/
-*.pkl
+# *.pkl
 *.csv
 
 # Plots and visualizations

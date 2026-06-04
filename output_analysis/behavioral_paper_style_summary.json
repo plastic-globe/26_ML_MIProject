@@ -1,0 +1,28 @@
+{
+  "all_runs": [
+    {
+      "file_path": "output\\mmlu\\plain\\Qwen2_5-0_5B-Instruct_20260604_034132.pkl",
+      "filename": "Qwen2_5-0_5B-Instruct_20260604_034132.pkl",
+      "model_name": "Qwen2_5-0_5B-Instruct",
+      "question_type": "plain",
+      "prefix_type": "",
+      "prefix_subtype": "",
+      "academic_level": "",
+      "rows": 14042,
+      "accuracy": 0.27681241988320754,
+      "correct_count": 3887,
+      "opinion_column": null,
+      "sycophancy_rate": null,
+      "sycophantic_count": null,
+      "num_subjects": null
+    }
+  ],
+  "paper_style_summary": [
+    {
+      "comparison": "plain_baseline",
+      "metric": "accuracy",
+      "value": 0.27681241988320754,
+      "runs": 1
+    }
+  ]
+}
