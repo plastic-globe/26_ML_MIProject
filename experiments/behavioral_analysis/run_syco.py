@@ -9,6 +9,7 @@ from datetime import datetime
 import argparse
 import logging
 import os
+import traceback
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
@@ -54,7 +55,8 @@ def process_question(question, tokenizer, model, device):
     try:
         prompt = f"Question: ||{question}||\nRespond with exactly one uppercase letter (A, B, C, D, etc.) and nothing else.\nAnswer:"
         inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=4096)
-        inputs = {key: value.to(device) for key, value in inputs.items()}
+        model_device = getattr(model, "device", device)
+        inputs = {key: value.to(model_device) for key, value in inputs.items()}
 
         with torch.no_grad():
             outputs = model.generate(
@@ -78,8 +80,73 @@ def process_question(question, tokenizer, model, device):
 
         return result
     except Exception as e:
-        logging.error(f"Error processing question: {e}")
+        logging.error(f"Error processing question: {e}\n{traceback.format_exc()}")
         return "Error"
+
+
+def load_tokenizer(model_name, hf_token):
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name,
+        token=hf_token,
+        trust_remote_code=False,
+    )
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token = tokenizer.eos_token
+    return tokenizer
+
+
+def load_model(model_name, hf_token):
+    common_kwargs = {
+        "pretrained_model_name_or_path": model_name,
+        "token": hf_token,
+        "trust_remote_code": False,
+    }
+
+    cuda_strategies = [
+        {
+            "torch_dtype": "auto",
+            "device_map": "auto",
+        },
+        {
+            "torch_dtype": torch.float16,
+        },
+        {},
+    ]
+    cpu_strategies = [
+        {
+            "torch_dtype": torch.float32,
+        },
+        {},
+    ]
+
+    strategies = cuda_strategies if torch.cuda.is_available() else cpu_strategies
+    errors = []
+
+    for strategy in strategies:
+        try:
+            logging.info(f"Trying model load strategy: {strategy}")
+            model = AutoModelForCausalLM.from_pretrained(
+                **common_kwargs,
+                **strategy,
+            )
+            if "device_map" not in strategy:
+                device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+                model = model.to(device)
+            model.eval()
+            return model
+        except Exception as exc:
+            errors.append((strategy, str(exc), traceback.format_exc()))
+            logging.error(
+                "Model load strategy failed: %s\n%s",
+                strategy,
+                traceback.format_exc(),
+            )
+
+    lines = ["All model loading strategies failed:"]
+    for strategy, message, stack in errors:
+        lines.append(f"Strategy {strategy}: {message}")
+        lines.append(stack)
+    raise RuntimeError("\n".join(lines))
 
 def main():
     args = parse_args()
@@ -110,12 +177,10 @@ def main():
 
     try:
         print("Loading tokenizer...")
-        tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token, trust_remote_code=True)
+        tokenizer = load_tokenizer(model_name, hf_token)
 
         print("Loading model...")
-        model = AutoModelForCausalLM.from_pretrained(model_name, token=hf_token, trust_remote_code=True)
-        model = model.to(device)
-        model.eval()
+        model = load_model(model_name, hf_token)
 
         # Load the pre-constructed DataFrame
         df = pd.read_pickle(input_filename)
@@ -199,7 +264,8 @@ def main():
 
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-        logging.error(f"An error occurred: {str(e)}")
+        print(traceback.format_exc())
+        logging.error(f"An error occurred: {str(e)}\n{traceback.format_exc()}")
         print("Please check your model, tokenizer, or environment.")
 
     finally:
