@@ -1,0 +1,708 @@
+{"kind":"deck","id":"pr/4o8w18","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"封面1"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"封面2"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"1_封面2"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"封面3"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"1_封面3"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"目录1"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout7.xml","name":"目录2"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout8.xml","name":"目录3"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout9.xml","name":"过渡页1"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout10.xml","name":"过渡页2"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout11.xml","name":"1_过渡页2"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout12.xml","name":"过渡页3"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout13.xml","name":"3_自定义版式","placeholders":[{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout14.xml","name":"8_自定义版式"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout15.xml","name":"6_自定义版式","placeholders":[{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout16.xml","name":"4_自定义版式","placeholders":[{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout17.xml","name":"7_自定义版式","placeholders":[{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout18.xml","name":"自定义版式"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout19.xml","name":"1_自定义版式"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout20.xml","name":"5_自定义版式"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout21.xml","name":"2_自定义版式"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout22.xml","name":"9_自定义版式"}
+{"kind":"slide","id":"sl/e77ijq","slide":1,"title":"LLM 迎合现象机制可解释性复现","textShapes":5}
+{"kind":"textbox","id":"sh/ful8ze94","slide":1,"name":"文本框 2","text":"LLM 迎合现象机制可解释性复现","textPreview":"LLM 迎合现象机制可解释性复现","textChars":16,"textLines":1,"bbox":[64.89,202.95,690.67,297.6]}
+{"kind":"textbox","id":"sh/d4na98ri","slide":1,"name":"文本框 8","text":"必要性、机制原理与全量结果 | Qwen2.5-1.5B | MMLU raw 14042 条","textPreview":"必要性、机制原理与全量结果 | Qwen2.5-1.5B | MMLU raw 14042 条","textChars":47,"textLines":1,"bbox":[64.89,408.59,608,66.6]}
+{"kind":"textbox","id":"sh/xozat0vm","slide":1,"name":"文本框 13","text":"智能科学与技术学院","textPreview":"智能科学与技术学院","textChars":9,"textLines":1,"bbox":[299.11,679.45,681.78,31.2]}
+{"kind":"textbox","id":"sh/utcrq98j","slide":1,"name":"文本框 1","text":"MI Project","textPreview":"MI Project","textChars":10,"textLines":1,"bbox":[64.89,485.7,256.99,35.54]}
+{"kind":"textbox","id":"sh/s7a9ojqd","slide":1,"name":"文本框 3","text":"2026.07","textPreview":"2026.07","textChars":7,"textLines":1,"bbox":[64.89,528.59,228.34,35.54]}
+{"kind":"notes","id":"nt/e77ijq","slide":1,"text":"润色版加入大模型可解释性必要性、patch/steer/improve 原理和更完整的归纳总结。"}
+{"kind":"slide","id":"sl/7hakfe","slide":2,"title":"目录","textShapes":12}
+{"kind":"shape","id":"sh/u54vql0z","slide":2,"name":"直接连接符 2","bbox":[590.06,224.71,42.77,0]}
+{"kind":"shape","id":"sh/pwfupkjm","slide":2,"name":"文本框 3","bbox":[588.02,167.56,45.98,61.39]}
+{"kind":"shape","id":"sh/4v6dwfi1","slide":2,"name":"文本框 4","bbox":[662.75,163.32,374.82,61.39]}
+{"kind":"shape","id":"sh/hgnixsbi","slide":2,"name":"直接连接符 30","bbox":[630.14,224.71,440.04,0]}
+{"kind":"shape","id":"sh/wr654zet","slide":2,"name":"直接连接符 11","bbox":[590.06,331.53,42.77,0]}
+{"kind":"shape","id":"sh/hsf6xkve","slide":2,"name":"文本框 12","bbox":[588.02,274.38,45.98,61.39]}
+{"kind":"shape","id":"sh/it876pwj","slide":2,"name":"文本框 13","bbox":[662.75,270.14,374.82,61.39]}
+{"kind":"shape","id":"sh/juhozud4","slide":2,"name":"直接连接符 14","bbox":[630.14,331.53,440.04,0]}
+{"kind":"shape","id":"sh/p4b2xgvy","slide":2,"name":"直接连接符 21","bbox":[590.06,438.35,42.77,0]}
+{"kind":"shape","id":"sh/o32l4bud","slide":2,"name":"文本框 22","bbox":[588.02,381.2,45.98,61.39]}
+{"kind":"shape","id":"sh/fy9krmdw","slide":2,"name":"文本框 23","bbox":[662.75,376.96,374.82,61.39]}
+{"kind":"shape","id":"sh/ex03yhcb","slide":2,"name":"直接连接符 24","bbox":[630.14,438.35,440.04,0]}
+{"kind":"shape","id":"sh/0zil0ru1","slide":2,"name":"直接连接符 26","bbox":[590.06,545.17,42.77,0]}
+{"kind":"shape","id":"sh/zud43qt0","slide":2,"name":"文本框 27","bbox":[588.02,488.02,45.98,61.39]}
+{"kind":"shape","id":"sh/yt43alcf","slide":2,"name":"文本框 28","bbox":[662.75,483.78,374.82,61.39]}
+{"kind":"shape","id":"sh/ix4rq9sr","slide":2,"name":"直接连接符 46","bbox":[630.14,545.17,440.04,0]}
+{"kind":"shape","id":"sh/9wzaxsbm","slide":2,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/ovq94na1","slide":2,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/6hk7y58j","slide":2,"text":"目录","textPreview":"目录","textChars":2,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/7itora94","slide":2,"text":"这份报告从“为什么研究”走到“如何干预”","textPreview":"这份报告从“为什么研究”走到“如何干预”","textChars":20,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/832p0fqp","slide":2,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/t4b6tkra","slide":2,"bbox":[145,132,990,64]}
+{"kind":"textbox","id":"sh/yd07u58n","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[185,142,70,42]}
+{"kind":"textbox","id":"sh/je9ona98","slide":2,"text":"为什么大模型需要机制可解释性研究","textPreview":"为什么大模型需要机制可解释性研究","textChars":16,"textLines":1,"bbox":[285,151,760,34]}
+{"kind":"shape","id":"sh/kfipwfqt","slide":2,"bbox":[145,222,990,64]}
+{"kind":"textbox","id":"sh/lgr6pkre","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[185,232,70,42]}
+{"kind":"textbox","id":"sh/i947698r","slide":2,"text":"Locate-Steer-Improve 的实验链路与数据范围","textPreview":"Locate-Steer-Improve 的实验链路与数据范围","textChars":31,"textLines":1,"bbox":[285,241,760,34]}
+{"kind":"shape","id":"sh/3ad8zu9c","slide":2,"bbox":[145,312,990,64]}
+{"kind":"textbox","id":"sh/ze54rmpo","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[185,322,70,42]}
+{"kind":"textbox","id":"sh/edw3y1o3","slide":2,"text":"patch / steer / improve 三类方法的原理","textPreview":"patch / steer / improve 三类方法的原理","textChars":31,"textLines":1,"bbox":[285,331,760,34]}
+{"kind":"shape","id":"sh/1gnmtw7u","slide":2,"bbox":[145,402,990,64]}
+{"kind":"textbox","id":"sh/0fel0r69","slide":2,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[185,412,70,42]}
+{"kind":"textbox","id":"sh/nip4v6p0","slide":2,"text":"Qwen2.5-1.5B 全量实验结果","textPreview":"Qwen2.5-1.5B 全量实验结果","textChars":19,"textLines":1,"bbox":[285,421,760,34]}
+{"kind":"shape","id":"sh/mhg321of","slide":2,"bbox":[145,492,990,64]}
+{"kind":"textbox","id":"sh/9k7mxg76","slide":2,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[185,502,70,42]}
+{"kind":"textbox","id":"sh/ojyl4b6l","slide":2,"text":"从机制证据归纳可执行结论","textPreview":"从机制证据归纳可执行结论","textChars":12,"textLines":1,"bbox":[285,511,760,34]}
+{"kind":"notes","id":"nt/7hakfe","slide":2,"text":""}
+{"kind":"slide","id":"sl/4r757o","slide":3,"title":"研究必要性","textShapes":10}
+{"kind":"shape","id":"sh/2p0nyts7","slide":3,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/mxcjal07","slide":3,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/lkb618b6","slide":3,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/betovyt4","slide":3,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/atkn2tsj","slide":3,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/xgb6x8bu","slide":3,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/32543etc","slide":3,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/2hw3u9cr","slide":3,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/p4nm54bi","slide":3,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/o3elwzax","slide":3,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/y58ri14b","slide":3,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/69srm147","slide":3,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/qx07idg3","slide":3,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/l4rqhsfq","slide":3,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/jal4bud8","slide":3,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/kbu54zet","slide":3,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/5c3md4ve","slide":3,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/6dcn6pwj","slide":3,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/re54fud4","slide":3,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/sfe58zep","slide":3,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/t0n6h4va","slide":3,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/e1wna9wv","slide":3,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/f25ojedg","slide":3,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/zul0f6hw","slide":3,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/etcj610b","slide":3,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/1w32hgzm","slide":3,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/0vu18bi1","slide":3,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/nylkjqhs","slide":3,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/90n2l0zy","slide":3,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/ozu1cvid","slide":3,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/nq9oryts","slide":3,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/a1wjel0j","slide":3,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/8ry14veh","slide":3,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/ts7id0f2","slide":3,"text":"研究必要性","textPreview":"研究必要性","textChars":5,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/6pwz25wb","slide":3,"text":"大模型越强，越需要知道错误从哪里进入推理","textPreview":"大模型越强，越需要知道错误从哪里进入推理","textChars":20,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/7q50bqxw","slide":3,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/k3eh0vel","slide":3,"bbox":[105,150,485,128]}
+{"kind":"textbox","id":"sh/l4ni90f6","slide":3,"text":"行为结果不足够","textPreview":"行为结果不足够","textChars":7,"textLines":1,"bbox":[130,172,430,30]}
+{"kind":"textbox","id":"sh/y1wzylwf","slide":3,"text":"只看准确率和迎合率，只能知道模型错了；不知道错误观点在内部何时压过事实答案。","textPreview":"只看准确率和迎合率，只能知道模型错了；不知道错误观点在内部何时压过事实答案。","textChars":38,"textLines":1,"bbox":[130,214,425,54]}
+{"kind":"shape","id":"sh/j2507qx0","slide":3,"bbox":[650,150,485,128]}
+{"kind":"textbox","id":"sh/wzehwbe9","slide":3,"text":"规模提升不等于可靠","textPreview":"规模提升不等于可靠","textChars":9,"textLines":1,"bbox":[675,172,430,30]}
+{"kind":"textbox","id":"sh/x0ni5gfu","slide":3,"text":"1.5B 的迎合率低于 0.5B，但 opinion-only 仍从 14.7% 提高到 32.5%。","textPreview":"1.5B 的迎合率低于 0.5B，但 opinion-only 仍从 14.7% 提高到 32.5%。","textChars":51,"textLines":1,"bbox":[675,214,425,54]}
+{"kind":"shape","id":"sh/69one1ov","slide":3,"bbox":[105,320,485,128]}
+{"kind":"textbox","id":"sh/7ax4n65g","slide":3,"text":"安全问题需要因果证据","textPreview":"安全问题需要因果证据","textChars":10,"textLines":1,"bbox":[130,342,430,30]}
+{"kind":"textbox","id":"sh/8b65gb61","slide":3,"text":"可解释性把相关现象推进到层级、表示和干预证据，避免只靠经验提示词。","textPreview":"可解释性把相关现象推进到层级、表示和干预证据，避免只靠经验提示词。","textChars":33,"textLines":1,"bbox":[130,384,425,54]}
+{"kind":"shape","id":"sh/tcfmpgnm","slide":3,"bbox":[650,320,485,128]}
+{"kind":"textbox","id":"sh/yl43a1oz","slide":3,"text":"改进需要可操作入口","textPreview":"改进需要可操作入口","textChars":9,"textLines":1,"bbox":[675,342,430,30]}
+{"kind":"textbox","id":"sh/jmd4j654","slide":3,"text":"定位关键层后，才能比较 patch、steer、prompt mitigation 哪条路线真正有效。","textPreview":"定位关键层后，才能比较 patch、steer、prompt mitigation 哪条路线真正有效。","textChars":51,"textLines":1,"bbox":[675,384,425,54]}
+{"kind":"table","id":"tb/wn2h0z6h","slide":3,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"notes","id":"nt/4r757o","slide":3,"text":""}
+{"kind":"slide","id":"sl/11o8vq","slide":4,"title":"实验范围","textShapes":14}
+{"kind":"shape","id":"sh/a9ofqt8n","slide":4,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/61gbqpsb","slide":4,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/14fed47q","slide":4,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/redw7upo","slide":4,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/qd4vep83","slide":4,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/d0ve947u","slide":4,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/v6dgn6d0","slide":4,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/u54felwv","slide":4,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/hsvypgv6","slide":4,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/grmxgbel","slide":4,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/a50vixcb","slide":4,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/y90vmhcn","slide":4,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/ilg3ixgn","slide":4,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/lc3mh8zu","slide":4,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/bi10rexs","slide":4,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/wja1kjyd","slide":4,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/xkjitofi","slide":4,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/ylcjmtg3","slide":4,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/jmlkvexo","slide":4,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/knu1oje9","slide":4,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/lo32xofu","slide":4,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/ep8japgz","slide":4,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/zqh0juxk","slide":4,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/jypcfa90","slide":4,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/ixwbmpsf","slide":4,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/507uhkrq","slide":4,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/4zytofal","slide":4,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/r2pcju9w","slide":4,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/t47ul4r2","slide":4,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/s3ytszah","slide":4,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/baxwjyp8","slide":4,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/m5cbe5s7","slide":4,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/cba9orq5","slide":4,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/dcjqhw7a","slide":4,"text":"实验范围","textPreview":"实验范围","textChars":4,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/q9s7m18z","slide":4,"text":"同一全量数据上，1.5B 提供更强的规模对照","textPreview":"同一全量数据上，1.5B 提供更强的规模对照","textChars":22,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/ba18f6pk","slide":4,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/o7apkrqt","slide":4,"bbox":[78,150,250,140]}
+{"kind":"textbox","id":"sh/p8jqdw7e","slide":4,"text":"MMLU raw","textPreview":"MMLU raw","textChars":8,"textLines":1,"bbox":[96,166,214,28]}
+{"kind":"textbox","id":"sh/2l87ih8n","slide":4,"text":"14042","textPreview":"14042","textChars":5,"textLines":1,"bbox":[96,196,214,44]}
+{"kind":"textbox","id":"sh/36h8bm98","slide":4,"text":"全量样本，不是 3000 条","textPreview":"全量样本，不是 3000 条","textChars":14,"textLines":1,"bbox":[96,246,214,34]}
+{"kind":"shape","id":"sh/83u9wbqx","slide":4,"bbox":[360,150,250,140]}
+{"kind":"textbox","id":"sh/943qpg7i","slide":4,"text":"学科覆盖","textPreview":"学科覆盖","textChars":4,"textLines":1,"bbox":[378,166,214,28]}
+{"kind":"textbox","id":"sh/65gnexs3","slide":4,"text":"57","textPreview":"57","textChars":2,"textLines":1,"bbox":[378,196,214,44]}
+{"kind":"textbox","id":"sh/769on2to","slide":4,"text":"subjects","textPreview":"subjects","textChars":8,"textLines":1,"bbox":[378,246,214,34]}
+{"kind":"shape","id":"sh/87i5g7a9","slide":4,"bbox":[642,150,250,140]}
+{"kind":"textbox","id":"sh/t8r6pcbu","slide":4,"text":"模型","textPreview":"模型","textChars":2,"textLines":1,"bbox":[660,166,214,28]}
+{"kind":"textbox","id":"sh/yhgnaxs7","slide":4,"text":"1.5B","textPreview":"1.5B","textChars":4,"textLines":1,"bbox":[660,196,214,44]}
+{"kind":"textbox","id":"sh/jipojits","slide":4,"text":"Qwen2.5-Instruct","textPreview":"Qwen2.5-Instruct","textChars":16,"textLines":1,"bbox":[660,246,214,34]}
+{"kind":"shape","id":"sh/k3y5cnad","slide":4,"bbox":[924,150,250,140]}
+{"kind":"textbox","id":"sh/l476lsbi","slide":4,"text":"框架","textPreview":"框架","textChars":2,"textLines":1,"bbox":[942,166,214,28]}
+{"kind":"textbox","id":"sh/adwn6dsv","slide":4,"text":"CUDA","textPreview":"CUDA","textChars":4,"textLines":1,"bbox":[942,196,214,44]}
+{"kind":"textbox","id":"sh/be5ofitg","slide":4,"text":"PyTorch + Transformers","textPreview":"PyTorch + Transformers","textChars":22,"textLines":1,"bbox":[942,246,214,34]}
+{"kind":"table","id":"tb/wbit83el","slide":4,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"table","id":"tb/k7ips3mt","slide":4,"name":"","rows":6,"cols":3,"preview":"环节 | 产物 | 全量规模","bbox":[130,330,1020,250]}
+{"kind":"notes","id":"nt/11o8vq","slide":4,"text":""}
+{"kind":"slide","id":"sl/ulu8rd","slide":5,"title":"方法链路","textShapes":18}
+{"kind":"shape","id":"sh/4fy5wbyt","slide":5,"name":"箭头: 右 69","bbox":[46.43,377.69,1191.94,65.78]}
+{"kind":"shape","id":"sh/zat8va1g","slide":5,"name":"矩形: 圆角 67","bbox":[919.35,167.38,275.55,155.97]}
+{"kind":"shape","id":"sh/e9k7m50v","slide":5,"name":"文本框 100","bbox":[932.57,177.15,250.29,128.28]}
+{"kind":"shape","id":"sh/mdk7q507","slide":5,"name":"矩形: 圆角 64","bbox":[710.79,496.3,275.55,155.97]}
+{"kind":"shape","id":"sh/90vqlkji","slide":5,"name":"文本框 100","bbox":[724.01,505.73,250.29,128.28]}
+{"kind":"shape","id":"sh/zytsfalg","slide":5,"name":"矩形: 圆角 58","bbox":[293.66,496.3,275.55,155.97]}
+{"kind":"shape","id":"sh/b2d8nu1o","slide":5,"name":"文本框 100","bbox":[306.89,505.73,250.29,128.28]}
+{"kind":"shape","id":"sh/cb294f2p","slide":5,"name":"矩形: 圆角 55","bbox":[502.22,167.44,275.55,155.97]}
+{"kind":"shape","id":"sh/dcbadk3a","slide":5,"name":"文本框 100","bbox":[515.45,176.87,250.29,128.28]}
+{"kind":"shape","id":"sh/kbql0nqh","slide":5,"name":"矩形: 圆角 48","bbox":[85.1,167.38,275.55,155.97]}
+{"kind":"shape","id":"sh/d0n6tgbi","slide":5,"name":"文本框 100","bbox":[98.33,175.42,250.29,128.28]}
+{"kind":"shape","id":"sh/ona1s3e1","slide":5,"name":"文本框 84","bbox":[40.06,15,230.93,61.39]}
+{"kind":"shape","id":"sh/yhsbi1wb","slide":5,"name":"矩形: 圆角 87","bbox":[169.11,356.13,107.53,107.53]}
+{"kind":"shape","id":"sh/dgjapwfq","slide":5,"name":"矩形: 圆角 86","bbox":[377.67,356.13,107.53,107.53]}
+{"kind":"shape","id":"sh/behsnmxk","slide":5,"name":"矩形: 圆角 85","bbox":[586.24,356.13,107.53,107.53]}
+{"kind":"shape","id":"sh/uh4bqtwf","slide":5,"name":"矩形: 圆角 84","bbox":[794.8,356.13,107.53,107.53]}
+{"kind":"shape","id":"sh/gjmts3el","slide":5,"name":"矩形: 圆角 83","bbox":[1003.36,356.13,107.53,107.53]}
+{"kind":"shape","id":"sh/1kvu18f6","slide":5,"name":"直线 10","bbox":[222.88,323.49,0,32.64]}
+{"kind":"shape","id":"sh/6dkbmtwj","slide":5,"name":"矩形 15","bbox":[85.1,315.65,275.55,7.84]}
+{"kind":"shape","id":"sh/tgvuxofu","slide":5,"name":"直线 29","bbox":[640,323.49,0,32.64]}
+{"kind":"shape","id":"sh/ipkbi9w7","slide":5,"name":"矩形 30","bbox":[502.22,316.9,275.53,6.58]}
+{"kind":"shape","id":"sh/nup8zadk","slide":5,"name":"直线 36","bbox":[1057.12,323.49,0,32.64]}
+{"kind":"shape","id":"sh/mtgrq5cz","slide":5,"name":"矩形 37","bbox":[919.35,316.9,275.53,6.58]}
+{"kind":"shape","id":"sh/8vi9sfu5","slide":5,"name":"直线 43","bbox":[431.44,463.66,0,32.64]}
+{"kind":"shape","id":"sh/vy98nudw","slide":5,"name":"矩形 44","bbox":[293.66,496.3,275.53,6.58]}
+{"kind":"shape","id":"sh/ax0rupcb","slide":5,"name":"直线 50","bbox":[848.56,463.66,0,32.64]}
+{"kind":"shape","id":"sh/wji9wzu1","slide":5,"name":"矩形 64","bbox":[710.79,496.3,275.53,6.58]}
+{"kind":"shape","id":"sh/pg7mpwze","slide":5,"name":"文本框 70","bbox":[183.23,390.51,79.3,38.78]}
+{"kind":"shape","id":"sh/3ep4n6h8","slide":5,"name":"文本框 72","bbox":[391.78,390.51,79.3,38.78]}
+{"kind":"shape","id":"sh/cji50byp","slide":5,"name":"文本框 73","bbox":[600.33,390.51,79.3,38.78]}
+{"kind":"shape","id":"sh/dkr6tgza","slide":5,"name":"文本框 74","bbox":[808.88,390.51,79.3,38.78]}
+{"kind":"shape","id":"sh/qh0ny1gz","slide":5,"name":"文本框 75","bbox":[1017.43,390.51,79.3,38.78]}
+{"kind":"shape","id":"sh/z21sr6xw","slide":5,"name":"灯片编号占位符 1","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/nm1kjyxw","slide":5,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/mlsjqtwb","slide":5,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/tkn2xcf6","slide":5,"text":"方法链路","textPreview":"方法链路","textChars":4,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/sjel47el","slide":5,"text":"Locate-Steer-Improve 把解释和改进连成闭环","textPreview":"Locate-Steer-Improve 把解释和改进连成闭环","textChars":31,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/q5ozypc3","slide":5,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/r6x0rudo","slide":5,"bbox":[80,190,205,210]}
+{"kind":"textbox","id":"sh/crqh0zut","slide":5,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[152,208,60,42]}
+{"kind":"textbox","id":"sh/dszit4ve","slide":5,"text":"Behavior","textPreview":"Behavior","textChars":8,"textLines":1,"bbox":[98,268,169,34]}
+{"kind":"textbox","id":"sh/21ozupcr","slide":5,"text":"先确认错误观点是否改变输出","textPreview":"先确认错误观点是否改变输出","textChars":13,"textLines":1,"bbox":[98,318,169,58]}
+{"kind":"shape","id":"sh/32xgnudc","slide":5,"bbox":[311,190,205,210]}
+{"kind":"textbox","id":"sh/436hwzux","slide":5,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[383,208,60,42]}
+{"kind":"textbox","id":"sh/p4fyp4vi","slide":5,"text":"Logit Lens","textPreview":"Logit Lens","textChars":10,"textLines":1,"bbox":[329,268,169,34]}
+{"kind":"textbox","id":"sh/mx8z6tcb","slide":5,"text":"逐层观察答案与观点的竞争","textPreview":"逐层观察答案与观点的竞争","textChars":12,"textLines":1,"bbox":[329,318,169,58]}
+{"kind":"shape","id":"sh/ny10zedg","slide":5,"bbox":[542,190,205,210]}
+{"kind":"textbox","id":"sh/0zipsvyh","slide":5,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[614,208,60,42]}
+{"kind":"textbox","id":"sh/l0rql0f2","slide":5,"text":"Patch","textPreview":"Patch","textChars":5,"textLines":1,"bbox":[560,268,169,34]}
+{"kind":"textbox","id":"sh/yx07q5gb","slide":5,"text":"替换内部表示，验证因果层","textPreview":"替换内部表示，验证因果层","textChars":12,"textLines":1,"bbox":[560,318,169,58]}
+{"kind":"shape","id":"sh/zy98jqxw","slide":5,"bbox":[773,190,205,210]}
+{"kind":"textbox","id":"sh/cbipovy5","slide":5,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[845,208,60,42]}
+{"kind":"textbox","id":"sh/dcrqh0fq","slide":5,"text":"Steer","textPreview":"Steer","textChars":5,"textLines":1,"bbox":[791,268,169,34]}
+{"kind":"textbox","id":"sh/q907mlgf","slide":5,"text":"注入方向向量，尝试推离迎合","textPreview":"注入方向向量，尝试推离迎合","textChars":13,"textLines":1,"bbox":[791,318,169,58]}
+{"kind":"shape","id":"sh/ra98fqxk","slide":5,"bbox":[1004,190,205,210]}
+{"kind":"textbox","id":"sh/w7290fyp","slide":5,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1076,208,60,42]}
+{"kind":"textbox","id":"sh/xsvqtkfu","slide":5,"text":"Improve","textPreview":"Improve","textChars":7,"textLines":1,"bbox":[1022,268,169,34]}
+{"kind":"textbox","id":"sh/7mxszehc","slide":5,"text":"用约束提示语做工程缓解","textPreview":"用约束提示语做工程缓解","textChars":11,"textLines":1,"bbox":[1022,318,169,58]}
+{"kind":"textbox","id":"sh/61obq90r","slide":5,"text":"核心逻辑：先证明现象，再定位内部载体，最后比较可操作干预是否真正降低迎合。","textPreview":"核心逻辑：先证明现象，再定位内部载体，最后比较可操作干预是否真正降低迎合。","textChars":37,"textLines":1,"bbox":[145,515,990,44]}
+{"kind":"notes","id":"nt/ulu8rd","slide":5,"text":""}
+{"kind":"slide","id":"sl/crzz4e","slide":6,"title":"原理 1/3","textShapes":18}
+{"kind":"shape","id":"sh/sna90v2p","slide":6,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/8f61sj2d","slide":6,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/vuh8j6lw","slide":6,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/5kzqp03y","slide":6,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/4jqpwvmd","slide":6,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/3yh8nql8","slide":6,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/lwjix4ru","slide":6,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/kvqhozq9","slide":6,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/zah0vu9o","slide":6,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/y98zmp83","slide":6,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/of6xwv61","slide":6,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/gbmxsv65","slide":6,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/4f2d0rmx","slide":6,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/ritcbm58","slide":6,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/povulwjm","slide":6,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/2l4bq1kv","slide":6,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/3mdcjm1g","slide":6,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/gj2tor25","slide":6,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/1kbuhwja","slide":6,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/ehkbmhkz","slide":6,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/fitsfmlk","slide":6,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/sf2tk72t","slide":6,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/tgbadc3e","slide":6,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/lsfix432","slide":6,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/kr61oz2h","slide":6,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/jqd0vulw","slide":6,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/yp4jmp4b","slide":6,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/tgf21o3y","slide":6,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/7ex0zel8","slide":6,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/6tojq9kn","slide":6,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/dojqt03a","slide":6,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/gjq1wj2p","slide":6,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/ep0fqlk7","slide":6,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/fq9gzq1s","slide":6,"text":"原理 1/3","textPreview":"原理 1/3","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/0rixsv2d","slide":6,"text":"Patching 的原理是做一次内部表示的反事实替换","textPreview":"Patching 的原理是做一次内部表示的反事实替换","textChars":26,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/1sby10ji","slide":6,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/2tkzul03","slide":6,"bbox":[80,185,205,210]}
+{"kind":"textbox","id":"sh/nutg3q1o","slide":6,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[152,203,60,42]}
+{"kind":"textbox","id":"sh/ov2hwvi9","slide":6,"text":"两种状态","textPreview":"两种状态","textChars":4,"textLines":1,"bbox":[98,263,169,34]}
+{"kind":"textbox","id":"sh/9wby50ju","slide":6,"text":"plain prompt 与 opinion prompt 形成成对样本","textPreview":"plain prompt 与 opinion prompt 形成成对样本","textChars":36,"textLines":1,"bbox":[98,313,169,58]}
+{"kind":"shape","id":"sh/axkzy50f","slide":6,"bbox":[311,185,205,210]}
+{"kind":"textbox","id":"sh/bytg7a10","slide":6,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[383,203,60,42]}
+{"kind":"textbox","id":"sh/gv2lsrmx","slide":6,"text":"选择层","textPreview":"选择层","textChars":3,"textLines":1,"bbox":[329,263,169,34]}
+{"kind":"textbox","id":"sh/hgb2lw3i","slide":6,"text":"取同一层最后 token 的 residual 表示","textPreview":"取同一层最后 token 的 residual 表示","textChars":26,"textLines":1,"bbox":[329,313,169,58]}
+{"kind":"shape","id":"sh/utk3qh4r","slide":6,"bbox":[542,185,205,210]}
+{"kind":"textbox","id":"sh/futkjmlc","slide":6,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[614,203,60,42]}
+{"kind":"textbox","id":"sh/4j2lwb2t","slide":6,"text":"替换表示","textPreview":"替换表示","textChars":4,"textLines":1,"bbox":[560,263,169,34]}
+{"kind":"textbox","id":"sh/pkvmpw3e","slide":6,"text":"用 plain 表示替换 opinion 表示","textPreview":"用 plain 表示替换 opinion 表示","textChars":23,"textLines":1,"bbox":[560,313,169,58]}
+{"kind":"shape","id":"sh/2hk3u14n","slide":6,"bbox":[773,185,205,210]}
+{"kind":"textbox","id":"sh/3itkn6l8","slide":6,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[845,203,60,42]}
+{"kind":"textbox","id":"sh/knilk7mp","slide":6,"text":"观察 margin","textPreview":"观察 margin","textChars":9,"textLines":1,"bbox":[791,263,169,34]}
+{"kind":"textbox","id":"sh/5or2dc3a","slide":6,"text":"检查 correct-minus-opinion 是否改变","textPreview":"检查 correct-minus-opinion 是否改变","textChars":29,"textLines":1,"bbox":[791,313,169,58]}
+{"kind":"shape","id":"sh/nixoja5s","slide":6,"bbox":[1004,185,205,210]}
+{"kind":"textbox","id":"sh/mhonq547","slide":6,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1076,203,60,42]}
+{"kind":"textbox","id":"sh/9kz6lkni","slide":6,"text":"判断因果","textPreview":"判断因果","textChars":4,"textLines":1,"bbox":[1022,263,169,34]}
+{"kind":"textbox","id":"sh/8jq5sfmd","slide":6,"text":"delta 越大，该层越像关键载体","textPreview":"delta 越大，该层越像关键载体","textChars":17,"textLines":1,"bbox":[1022,313,169,58]}
+{"kind":"textbox","id":"sh/zexofa5g","slide":6,"text":"本实验中，1.5B 的 base margin 已经为正；patching 更像是在增强正确答案优势，而不是把答案从负 margin 中救回。","textPreview":"本实验中，1.5B 的 base margin 已经为正；patching 更像是在增强正确答案优势，而不是把答案从负 margin 中救回。","textChars":71,"textLines":1,"bbox":[125,515,1030,56]}
+{"kind":"table","id":"tb/2l8net87","slide":6,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"notes","id":"nt/crzz4e","slide":6,"text":""}
+{"kind":"slide","id":"sl/3iqh0b","slide":7,"title":"原理 2/3","textShapes":18}
+{"kind":"shape","id":"sh/vqhkjy1s","slide":7,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/lw3qx8ni","slide":7,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/sjalkni5","slide":7,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/it83et03","slide":7,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/juhkny1o","slide":7,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/4vqlg3i9","slide":7,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/8fa98ni1","slide":7,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/tgjq1sjm","slide":7,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/6d8r6d0b","slide":7,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/7e18zi1w","slide":7,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/dgnudwj6","slide":7,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/5c3u9w3u","slide":7,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/t83ulwn2","slide":7,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/u9cve147","slide":7,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/4fyp0fal","slide":7,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/3eporatg","slide":7,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/2dgny5sv","slide":7,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/dkr6x4bi","slide":7,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/cjip4zax","slide":7,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/ripovutc","slide":7,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/qhg72psr","slide":7,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/l8r614be","slide":7,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/07ip8zat","slide":7,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/8zep8n69","slide":7,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/90nq1sne","slide":7,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/mxc76do3","slide":7,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/7yl8zi5o","slide":7,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/kvup436x","slide":7,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/y9c72dor","slide":7,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/zul8vy5c","slide":7,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/up83at07","slide":7,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/x83qt8nm","slide":7,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/f218jy98","slide":7,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/e1srat8n","slide":7,"text":"原理 2/3","textPreview":"原理 2/3","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/14jql8re","slide":7,"text":"Steering 的原理是把“非迎合方向”注入推理过程","textPreview":"Steering 的原理是把“非迎合方向”注入推理过程","textChars":27,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/03a9c3qt","slide":7,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/n618ny9k","slide":7,"bbox":[80,185,205,210]}
+{"kind":"textbox","id":"sh/25sret8z","slide":7,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[152,203,60,42]}
+{"kind":"textbox","id":"sh/ps3qp8ra","slide":7,"text":"构造方向","textPreview":"构造方向","textChars":4,"textLines":1,"bbox":[98,263,169,34]}
+{"kind":"textbox","id":"sh/o7a9g3qp","slide":7,"text":"v = mean(hidden_plain - hidden_opinion)","textPreview":"v = mean(hidden_plain - hidden_opinion)","textChars":39,"textLines":1,"bbox":[98,313,169,58]}
+{"kind":"shape","id":"sh/bulsri9g","slide":7,"bbox":[311,185,205,210]}
+{"kind":"textbox","id":"sh/atcrid8v","slide":7,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[383,203,60,42]}
+{"kind":"textbox","id":"sh/zu18zqps","slide":7,"text":"选择层位","textPreview":"选择层位","textChars":4,"textLines":1,"bbox":[329,263,169,34]}
+{"kind":"textbox","id":"sh/ytsrqlon","slide":7,"text":"在候选 decoder layer 上注入向量","textPreview":"在候选 decoder layer 上注入向量","textChars":23,"textLines":1,"bbox":[329,313,169,58]}
+{"kind":"shape","id":"sh/lwjq1g7y","slide":7,"bbox":[542,185,205,210]}
+{"kind":"textbox","id":"sh/0va9sv6d","slide":7,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[614,203,60,42]}
+{"kind":"textbox","id":"sh/b6h8v6pw","slide":7,"text":"调节强度","textPreview":"调节强度","textChars":4,"textLines":1,"bbox":[560,263,169,34]}
+{"kind":"textbox","id":"sh/q58rm1ob","slide":7,"text":"用 alpha 控制方向和幅度","textPreview":"用 alpha 控制方向和幅度","textChars":15,"textLines":1,"bbox":[560,313,169,58]}
+{"kind":"shape","id":"sh/dszqxg72","slide":7,"bbox":[773,185,205,210]}
+{"kind":"textbox","id":"sh/crq9ob6h","slide":7,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[845,203,60,42]}
+{"kind":"textbox","id":"sh/32h8r6pk","slide":7,"text":"重新回答","textPreview":"重新回答","textChars":4,"textLines":1,"bbox":[791,263,169,34]}
+{"kind":"textbox","id":"sh/21o7i1of","slide":7,"text":"在 opinion prompt 下再次推理","textPreview":"在 opinion prompt 下再次推理","textChars":22,"textLines":1,"bbox":[791,313,169,58]}
+{"kind":"shape","id":"sh/s7m5s7mx","slide":7,"bbox":[1004,185,205,210]}
+{"kind":"textbox","id":"sh/t8v61cni","slide":7,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1076,203,60,42]}
+{"kind":"textbox","id":"sh/654nqx47","slide":7,"text":"评估消除","textPreview":"评估消除","textChars":4,"textLines":1,"bbox":[1022,263,169,34]}
+{"kind":"textbox","id":"sh/r6doz25c","slide":7,"text":"统计 baseline 迎合样本是否被纠正","textPreview":"统计 baseline 迎合样本是否被纠正","textChars":21,"textLines":1,"bbox":[1022,313,169,58]}
+{"kind":"textbox","id":"sh/gb65w7m9","slide":7,"text":"它是机制一致的干预，但单一均值向量过于粗糙：在 1.5B 上最佳消除率只有 0.9%。","textPreview":"它是机制一致的干预，但单一均值向量过于粗糙：在 1.5B 上最佳消除率只有 0.9%。","textChars":43,"textLines":1,"bbox":[135,515,1010,56]}
+{"kind":"table","id":"tb/ri1ojm5g","slide":7,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"notes","id":"nt/3iqh0b","slide":7,"text":""}
+{"kind":"slide","id":"sl/dk8q1s","slide":8,"title":"原理 3/3","textShapes":11}
+{"kind":"shape","id":"sh/wjyx872h","slide":8,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/wnqpsj6p","slide":8,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/rq9w7m14","slide":8,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/1gbydwjm","slide":8,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/0f2x4ri1","slide":8,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/futgb61g","slide":8,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/1k72ho3q","slide":8,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/0jyloj25","slide":8,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/zipkfelk","slide":8,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/ehg3m9kf","slide":8,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/4nu1wfix","slide":8,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/gzuhsfi1","slide":8,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/k3qxkbyt","slide":8,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/z6xwfmh4","slide":8,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/pcbup8fm","slide":8,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/29kbedwb","slide":8,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/3atcnixw","slide":8,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/g72tc3e5","slide":8,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/h8bul8fq","slide":8,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/ul0batwz","slide":8,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/fmtcjyxk","slide":8,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/03mdo7e9","slide":8,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/14vuxsfu","slide":8,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/9kzqx4ne","slide":8,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/8j6poz6t","slide":8,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/7ix8vu58","slide":8,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/mho7m9on","slide":8,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/h8zq1ona","slide":8,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/vmh8ze54","slide":8,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/ul87q9oz","slide":8,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/hk7e1cj2","slide":8,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/crmpgf6l","slide":8,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/2xknql4j","slide":8,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/3it4jql4","slide":8,"text":"原理 3/3","textPreview":"原理 3/3","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/oj25svm9","slide":8,"text":"Improve 的原理是把机制洞察转化为显式推理约束","textPreview":"Improve 的原理是把机制洞察转化为显式推理约束","textChars":26,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/pkbml03u","slide":8,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/ql4nu54f","slide":8,"bbox":[105,150,485,128]}
+{"kind":"textbox","id":"sh/bmd4nql0","slide":8,"text":"truth_priority","textPreview":"truth_priority","textChars":14,"textLines":1,"bbox":[130,172,430,30]}
+{"kind":"textbox","id":"sh/cnm5wvml","slide":8,"text":"要求优先独立判断事实，再处理用户观点。","textPreview":"要求优先独立判断事实，再处理用户观点。","textChars":19,"textLines":1,"bbox":[130,214,425,54]}
+{"kind":"shape","id":"sh/xov6p036","slide":8,"bbox":[650,150,485,128]}
+{"kind":"textbox","id":"sh/6p0ni14b","slide":8,"text":"anti_sycophancy","textPreview":"anti_sycophancy","textChars":15,"textLines":1,"bbox":[675,172,430,30]}
+{"kind":"textbox","id":"sh/rq94r65w","slide":8,"text":"明确要求不要仅因用户表达了观点就同意。","textPreview":"明确要求不要仅因用户表达了观点就同意。","textChars":19,"textLines":1,"bbox":[675,214,425,54]}
+{"kind":"shape","id":"sh/cnq1gv25","slide":8,"bbox":[105,320,485,128]}
+{"kind":"textbox","id":"sh/dozip0jq","slide":8,"text":"verify_then_answer","textPreview":"verify_then_answer","textChars":18,"textLines":1,"bbox":[130,342,430,30]}
+{"kind":"textbox","id":"sh/q1oze5kf","slide":8,"text":"先验证选项依据，再给出最终答案。","textPreview":"先验证选项依据，再给出最终答案。","textChars":16,"textLines":1,"bbox":[130,384,425,54]}
+{"kind":"shape","id":"sh/bmh0nq1k","slide":8,"bbox":[650,320,485,128]}
+{"kind":"textbox","id":"sh/0rq1kfih","slide":8,"text":"counter_opinion_check","textPreview":"counter_opinion_check","textChars":21,"textLines":1,"bbox":[675,342,430,30]}
+{"kind":"textbox","id":"sh/lszitkj2","slide":8,"text":"刻意检查用户观点是否可能是错误选项。","textPreview":"刻意检查用户观点是否可能是错误选项。","textChars":18,"textLines":1,"bbox":[675,384,425,54]}
+{"kind":"textbox","id":"sh/yp8ji5kb","slide":8,"text":"Prompt mitigation 不直接改内部激活，但它是最容易部署的工程约束；本轮最优方法是 anti_sycophancy。","textPreview":"Prompt mitigation 不直接改内部激活，但它是最容易部署的工程约束；本轮最优方法是 anti_sycophancy。","textChars":65,"textLines":1,"bbox":[120,515,1040,56]}
+{"kind":"table","id":"tb/6hobqxkj","slide":8,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"notes","id":"nt/dk8q1s","slide":8,"text":""}
+{"kind":"slide","id":"sl/r3x52t","slide":9,"title":"结果 1/5","textShapes":11}
+{"kind":"shape","id":"sh/gzy1c7ut","slide":9,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/sj2hkved","slide":9,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/rq9krmdg","slide":9,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/1wb2xwvy","slide":9,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/0vilorud","slide":9,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/fu9kvmds","slide":9,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/xgju90be","slide":9,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/wfatgvat","slide":9,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/be1c7qt8","slide":9,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/atsbelsn","slide":9,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/0zq9orql","slide":9,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/cv69krqp","slide":9,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/gz2pcn6h","slide":9,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/v29o7eps","slide":9,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/1wnu10je","slide":9,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/e9cbqlkn","slide":9,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/fulczq18","slide":9,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/s7utob2h","slide":9,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/d83uxgj2","slide":9,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/q5cbmlkb","slide":9,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/r6lcv61w","slide":9,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/c3yd0fi1","slide":9,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/x47utkj6","slide":9,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/5gbypgf2","slide":9,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/4f2hgbeh","slide":9,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/je9gn6xw","slide":9,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/id0ze1wb","slide":9,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/tkbyt0fy","slide":9,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/ritgrqxs","slide":9,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/6hkzilwn","slide":9,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/h072lsve","slide":9,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/8nyx8re9","slide":9,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/yhcn2t8v","slide":9,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/zil4vy9g","slide":9,"text":"结果 1/5","textPreview":"结果 1/5","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/0je543q1","slide":9,"text":"1.5B 仍会迎合，但幅度明显低于 0.5B","textPreview":"1.5B 仍会迎合，但幅度明显低于 0.5B","textChars":22,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/l4nmx8r6","slide":9,"bbox":[70,104,180,4]}
+{"kind":"textbox","id":"sh/n654zi9c","slide":9,"text":"plain 迎合率","textPreview":"plain 迎合率","textChars":9,"textLines":1,"bbox":[725,160,189,24]}
+{"kind":"shape","id":"sh/87e58nqx","slide":9,"bbox":[926,166,159.6,13]}
+{"kind":"shape","id":"sh/98n61sri","slide":9,"bbox":[926,166,36.09,13]}
+{"kind":"textbox","id":"sh/29s3u98n","slide":9,"text":"14.7%","textPreview":"14.7%","textChars":5,"textLines":1,"bbox":[1093.6,159,78,22]}
+{"kind":"textbox","id":"sh/3a14ne98","slide":9,"text":"opinion_only 迎合率","textPreview":"opinion_only 迎合率","textChars":16,"textLines":1,"bbox":[725,207.5,189,24]}
+{"kind":"shape","id":"sh/k76xc3et","slide":9,"bbox":[926,213.5,159.6,13]}
+{"kind":"shape","id":"sh/l8fy58fe","slide":9,"bbox":[926,213.5,79.8,13]}
+{"kind":"textbox","id":"sh/y5ofatwn","slide":9,"text":"32.5%","textPreview":"32.5%","textChars":5,"textLines":1,"bbox":[1093.6,206.5,78,22]}
+{"kind":"textbox","id":"sh/j6xg3yx8","slide":9,"text":"prefix+opinion 迎合率","textPreview":"prefix+opinion 迎合率","textChars":18,"textLines":1,"bbox":[725,255,189,24]}
+{"kind":"shape","id":"sh/8bqxg3ep","slide":9,"bbox":[926,261,159.6,13]}
+{"kind":"shape","id":"sh/tczy98va","slide":9,"bbox":[926,261,47.63,13]}
+{"kind":"textbox","id":"sh/69ofedwz","slide":9,"text":"19.4%","textPreview":"19.4%","textChars":5,"textLines":1,"bbox":[1093.6,254,78,22]}
+{"kind":"textbox","id":"sh/7ahg7ixk","slide":9,"text":"plain 准确率","textPreview":"plain 准确率","textChars":9,"textLines":1,"bbox":[725,302.5,189,24]}
+{"kind":"shape","id":"sh/gzqxkne1","slide":9,"bbox":[926,308.5,159.6,13]}
+{"kind":"shape","id":"sh/h0zydsvm","slide":9,"bbox":[926,308.5,141.18,13]}
+{"kind":"textbox","id":"sh/rul03mxo","slide":9,"text":"57.5%","textPreview":"57.5%","textChars":5,"textLines":1,"bbox":[1093.6,301.5,78,22]}
+{"kind":"textbox","id":"sh/qtcjahg3","slide":9,"text":"解释：规模提升显著降低迎合，但错误用户观点仍会改变事实性回答。","textPreview":"解释：规模提升显著降低迎合，但错误用户观点仍会改变事实性回答。","textChars":31,"textLines":1,"bbox":[120,455,1020,72]}
+{"kind":"table","id":"tb/etormt87","slide":9,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"table","id":"tb/pcnupgb6","slide":9,"name":"","rows":4,"cols":4,"preview":"条件 | 样本数 | 准确率 | 迎合率","bbox":[90,150,560,250]}
+{"kind":"notes","id":"nt/r3x52t","slide":9,"text":""}
+{"kind":"slide","id":"sl/tdcnkf","slide":10,"title":"结果 2/5","textShapes":9}
+{"kind":"shape","id":"sh/6hs3axob","slide":10,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/qlkb658f","slide":10,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/pc3mtcna","slide":10,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/fml4n25s","slide":10,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/els3ex4n","slide":10,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/183mpcny","slide":10,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/7qdcjylk","slide":10,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/6p4vqtkz","slide":10,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/tsvul83a","slide":10,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/srmds325","slide":10,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/mtgjylwj","slide":10,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/axgj25wf","slide":10,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/ulozyxob","slide":10,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/pczidw7y","slide":10,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/nytwre5g","slide":10,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/8z2d0jml","slide":10,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/90beton6","slide":10,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/alkv2t4r","slide":10,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/vmtwvy5c","slide":10,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/wnmd43mx","slide":10,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/xovex8ni","slide":10,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/ip4f6t43","slide":10,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/jqdwzy58","slide":10,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/3itsva9o","slide":10,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/2h0r2583","slide":10,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/pkbax0ru","slide":10,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/4j294fq9","slide":10,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/rmtsza90","slide":10,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/d8ba1krq","slide":10,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/cn2t8fql","slide":10,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/ri1kj25w","slide":10,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/e94bap8b","slide":10,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/wfm90z6p","slide":10,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/xgfat4na","slide":10,"text":"结果 2/5","textPreview":"结果 2/5","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/ad4rypoj","slide":10,"text":"Logit Lens 显示 1.5B 的观点优势弱且偏早层","textPreview":"Logit Lens 显示 1.5B 的观点优势弱且偏早层","textChars":29,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/bedsru54","slide":10,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/9cvqpkny","slide":10,"bbox":[860,160,250,140]}
+{"kind":"textbox","id":"sh/mp4rupon","slide":10,"text":"最大 gap","textPreview":"最大 gap","textChars":6,"textLines":1,"bbox":[878,176,214,28]}
+{"kind":"textbox","id":"sh/nad8na58","slide":10,"text":"0.028","textPreview":"0.028","textChars":5,"textLines":1,"bbox":[878,206,214,44]}
+{"kind":"textbox","id":"sh/0n29sf6h","slide":10,"text":"prefix+opinion layer 8","textPreview":"prefix+opinion layer 8","textChars":22,"textLines":1,"bbox":[878,256,214,34]}
+{"kind":"shape","id":"sh/1obqlk72","slide":10,"bbox":[860,330,250,140]}
+{"kind":"textbox","id":"sh/u5sb2xcr","slide":10,"text":"主要层位","textPreview":"主要层位","textChars":4,"textLines":1,"bbox":[878,346,214,28]}
+{"kind":"textbox","id":"sh/v61cb2tc","slide":10,"text":"3/5/8","textPreview":"3/5/8","textChars":5,"textLines":1,"bbox":[878,376,214,44]}
+{"kind":"textbox","id":"sh/w7at47ux","slide":10,"text":"早层信号较弱","textPreview":"早层信号较弱","textChars":6,"textLines":1,"bbox":[878,426,214,34]}
+{"kind":"textbox","id":"sh/h8judcbi","slide":10,"text":"意义：不能沿用 0.5B 中“20-22 层最强”的结论；规模变化会改变内部表征形态。","textPreview":"意义：不能沿用 0.5B 中“20-22 层最强”的结论；规模变化会改变内部表征形态。","textChars":43,"textLines":1,"bbox":[95,470,1030,70]}
+{"kind":"table","id":"tb/svmpwj6p","slide":10,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"table","id":"tb/bq10fmdk","slide":10,"name":"","rows":6,"cols":5,"preview":"condition | layer | p_answer | p_opinion | gap","bbox":[70,145,720,260]}
+{"kind":"notes","id":"nt/tdcnkf","slide":10,"text":""}
+{"kind":"slide","id":"sl/busxks","slide":11,"title":"结果 3/5","textShapes":11}
+{"kind":"shape","id":"sh/apk36t87","slide":11,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/a1cra5wr","slide":11,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/tkfmps76","slide":11,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/f6x4ripw","slide":11,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/ulonix8r","slide":11,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/h8f6ts72","slide":11,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/7ahwvix4","slide":11,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/698f2dwj","slide":11,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/tczexsfa","slide":11,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/8bqx4nep","slide":11,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/qxkbipw7","slide":11,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/2t0be5wb","slide":11,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/m5wjq50b","slide":11,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/14n2h0jq","slide":11,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/ralgr6ho","slide":11,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/cbuh0ryt","slide":11,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/dc3itwze","slide":11,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/25szuhgr","slide":11,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/36lgnmhc","slide":11,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/47uhwryx","slide":11,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/p83ypwzi","slide":11,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/uhszqh0v","slide":11,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/fi1gjmhg","slide":11,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/j6ls7ux8","slide":11,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/i5crepwn","slide":11,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/58na9kfe","slide":11,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/k7e9gfet","slide":11,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/v2ls3axc","slide":11,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/x43a5kf2","slide":11,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/w3u9cfex","slide":11,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/vat4fyps","slide":11,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/uxwbm9wv","slide":11,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/cjqp0bud","slide":11,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/d4z69wvy","slide":11,"text":"结果 3/5","textPreview":"结果 3/5","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/qh87y1c7","slide":11,"text":"Patching 指向 layer 26/23/22 对答案 margin 最关键","textPreview":"Patching 指向 layer 26/23/22 对答案 margin 最关键","textChars":41,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/riho76ds","slide":11,"bbox":[70,104,180,4]}
+{"kind":"textbox","id":"sh/l8j6dgvu","slide":11,"text":"layer 26","textPreview":"layer 26","textChars":8,"textLines":1,"bbox":[835,170,148.5,24]}
+{"kind":"shape","id":"sh/e58721cj","slide":11,"bbox":[995.5,176,125.4,13]}
+{"kind":"shape","id":"sh/z6hob6d4","slide":11,"bbox":[995.5,176,121.32,13]}
+{"kind":"textbox","id":"sh/8bap8vul","slide":11,"text":"+1.693","textPreview":"+1.693","textChars":6,"textLines":1,"bbox":[1128.9,169,78,22]}
+{"kind":"textbox","id":"sh/9cjqhgv6","slide":11,"text":"layer 23","textPreview":"layer 23","textChars":8,"textLines":1,"bbox":[835,208.75,148.5,24]}
+{"kind":"shape","id":"sh/6lo3ah8j","slide":11,"bbox":[995.5,214.75,125.4,13]}
+{"kind":"shape","id":"sh/7mx4jm94","slide":11,"bbox":[995.5,214.75,112.93,13]}
+{"kind":"textbox","id":"sh/8n6lcrqp","slide":11,"text":"+1.576","textPreview":"+1.576","textChars":6,"textLines":1,"bbox":[1128.9,207.75,78,22]}
+{"kind":"textbox","id":"sh/t8fmlwru","slide":11,"text":"layer 22","textPreview":"layer 22","textChars":8,"textLines":1,"bbox":[835,247.5,148.5,24]}
+{"kind":"shape","id":"sh/u9o3e18f","slide":11,"bbox":[995.5,253.5,125.4,13]}
+{"kind":"shape","id":"sh/vah4n690","slide":11,"bbox":[995.5,253.5,112.14,13]}
+{"kind":"textbox","id":"sh/gbqlgbql","slide":11,"text":"+1.565","textPreview":"+1.565","textChars":6,"textLines":1,"bbox":[1128.9,246.5,78,22]}
+{"kind":"textbox","id":"sh/hczmpg76","slide":11,"text":"layer 24","textPreview":"layer 24","textChars":8,"textLines":1,"bbox":[835,286.25,148.5,24]}
+{"kind":"shape","id":"sh/id83i18r","slide":11,"bbox":[995.5,292.25,125.4,13]}
+{"kind":"shape","id":"sh/3eh4r6pc","slide":11,"bbox":[995.5,292.25,108.63,13]}
+{"kind":"textbox","id":"sh/d8j6hkbe","slide":11,"text":"+1.516","textPreview":"+1.516","textChars":6,"textLines":1,"bbox":[1128.9,285.25,78,22]}
+{"kind":"textbox","id":"sh/s7ap8fat","slide":11,"text":"结论：patching 给出因果证据；但在 1.5B 上它主要增强已为正的正确答案 margin。","textPreview":"结论：patching 给出因果证据；但在 1.5B 上它主要增强已为正的正确答案 margin。","textChars":49,"textLines":1,"bbox":[110,460,1010,76]}
+{"kind":"table","id":"tb/wnilgbml","slide":11,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"table","id":"tb/nm94nq54","slide":11,"name":"","rows":6,"cols":4,"preview":"layer | base margin | patched margin | delta","bbox":[90,145,700,270]}
+{"kind":"notes","id":"nt/busxks","slide":11,"text":""}
+{"kind":"slide","id":"sl/0epwyr","slide":12,"title":"结果 4/5","textShapes":12}
+{"kind":"shape","id":"sh/hkj6twnm","slide":12,"name":"矩形: 圆角 10","bbox":[66.08,323.51,872.36,356.45]}
+{"kind":"shape","id":"sh/vqpc7up0","slide":12,"name":"文本框 84","bbox":[40.06,15,408.65,61.39]}
+{"kind":"shape","id":"sh/ypo7aho3","slide":12,"name":"矩形: 圆角 10","bbox":[66.08,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/8vqpgr65","slide":12,"name":"文本框103","bbox":[70.28,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/twz6pwnq","slide":12,"name":"文本框103","bbox":[237.34,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/6t87ehoz","slide":12,"name":"文本框103","bbox":[70.28,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/m50ba5cb","slide":12,"name":"矩形: 圆角 10","bbox":[961.4,126.14,275.48,553.82]}
+{"kind":"shape","id":"sh/n69c3adw","slide":12,"name":"文本框103","bbox":[1021.77,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/872tcfuh","slide":12,"name":"文本框103","bbox":[1021.77,190.02,154.75,67.86]}
+{"kind":"shape","id":"sh/98bu5kv2","slide":12,"name":"文本框103","bbox":[1021.77,262.53,154.75,31.71]}
+{"kind":"shape","id":"sh/f6hozi1o","slide":12,"name":"直接连接符 22","bbox":[231.19,140.25,0,143.16]}
+{"kind":"shape","id":"sh/r2x4vi1c","slide":12,"name":"直接连接符 22","bbox":[1099.14,251.93,0,143.16]}
+{"kind":"shape","id":"sh/nep8z69w","slide":12,"name":"文本框 100","bbox":[974,349.77,250.29,128.28]}
+{"kind":"shape","id":"sh/0bypobq5","slide":12,"name":"文本框 100","bbox":[974,496.32,250.29,128.28]}
+{"kind":"shape","id":"sh/25wre1s7","slide":12,"name":"文本框103","bbox":[70.28,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/p87q9wbi","slide":12,"name":"文本框103","bbox":[70.28,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/47e9grax","slide":12,"name":"矩形: 圆角 10","bbox":[364.52,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/rap8b6to","slide":12,"name":"文本框103","bbox":[368.73,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/q9gri1s3","slide":12,"name":"文本框103","bbox":[535.78,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/dc7qdgbu","slide":12,"name":"文本框103","bbox":[368.73,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/cby9kba9","slide":12,"name":"直接连接符 22","bbox":[529.63,140.25,0,143.16]}
+{"kind":"shape","id":"sh/zep8fqtk","slide":12,"name":"文本框103","bbox":[368.73,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/edgrmlsf","slide":12,"name":"文本框103","bbox":[368.73,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/mlwba58j","slide":12,"name":"矩形: 圆角 10","bbox":[662.96,128.06,275.48,173.94]}
+{"kind":"shape","id":"sh/7mpc3ap4","slide":12,"name":"文本框103","bbox":[667.17,146.59,154.75,35.54]}
+{"kind":"shape","id":"sh/8nydcfqp","slide":12,"name":"文本框103","bbox":[834.23,186.16,104.22,54.93]}
+{"kind":"shape","id":"sh/9o7u5k7u","slide":12,"name":"文本框103","bbox":[667.17,187.28,154.75,31.71]}
+{"kind":"shape","id":"sh/upgvep8f","slide":12,"name":"直接连接符 22","bbox":[828.07,140.25,0,143.16]}
+{"kind":"shape","id":"sh/wrydgzql","slide":12,"name":"文本框103","bbox":[667.17,216.53,154.75,31.71]}
+{"kind":"shape","id":"sh/hs7u9k76","slide":12,"name":"文本框103","bbox":[667.17,245.78,154.75,31.71]}
+{"kind":"shape","id":"sh/gzapkr6h","slide":12,"name":"灯片编号占位符 7","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/je9cbupc","slide":12,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/t8be1ore","slide":12,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/s72x8jat","slide":12,"text":"结果 4/5","textPreview":"结果 4/5","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/rmtwzy98","slide":12,"text":"Steering 的方向正确，但工程效果很弱","textPreview":"Steering 的方向正确，但工程效果很弱","textChars":22,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/6l0f6tsn","slide":12,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/1cby58ra","slide":12,"bbox":[80,150,300,140]}
+{"kind":"textbox","id":"sh/gb2xc3q5","slide":12,"text":"Sweep 规模","textPreview":"Sweep 规模","textChars":8,"textLines":1,"bbox":[98,166,264,28]}
+{"kind":"textbox","id":"sh/fatg3y9k","slide":12,"text":"393176","textPreview":"393176","textChars":6,"textLines":1,"bbox":[98,196,264,44]}
+{"kind":"textbox","id":"sh/e9kfatsz","slide":12,"text":"4 层 × 7 alpha × 全量样本","textPreview":"4 层 × 7 alpha × 全量样本","textChars":20,"textLines":1,"bbox":[98,246,264,34]}
+{"kind":"shape","id":"sh/pgvy98rm","slide":12,"bbox":[425,150,300,140]}
+{"kind":"textbox","id":"sh/ofmxg3q1","slide":12,"text":"最佳 setting","textPreview":"最佳 setting","textChars":10,"textLines":1,"bbox":[443,166,264,28]}
+{"kind":"textbox","id":"sh/xkfe1876","slide":12,"text":"L24 α=4","textPreview":"L24 α=4","textChars":7,"textLines":1,"bbox":[443,196,264,44]}
+{"kind":"textbox","id":"sh/wj6d83ql","slide":12,"text":"steering 中最高消除率","textPreview":"steering 中最高消除率","textChars":15,"textLines":1,"bbox":[443,246,264,34]}
+{"kind":"shape","id":"sh/vixwzyp0","slide":12,"bbox":[770,150,300,140]}
+{"kind":"textbox","id":"sh/ah4v6d8v","slide":12,"text":"消除率","textPreview":"消除率","textChars":3,"textLines":1,"bbox":[788,166,264,28]}
+{"kind":"textbox","id":"sh/5ofe5s7i","slide":12,"text":"0.9%","textPreview":"0.9%","textChars":4,"textLines":1,"bbox":[788,196,264,44]}
+{"kind":"textbox","id":"sh/kn6dcn6x","slide":12,"text":"明显低于 prompt mitigation","textPreview":"明显低于 prompt mitigation","textChars":22,"textLines":1,"bbox":[788,246,264,34]}
+{"kind":"textbox","id":"sh/ilovador","slide":12,"text":"解释：迎合行为不是一个容易被单一线性向量抹去的模式，需要更精细的分层或特征级干预。","textPreview":"解释：迎合行为不是一个容易被单一线性向量抹去的模式，需要更精细的分层或特征级干预。","textChars":41,"textLines":1,"bbox":[115,590,1040,44]}
+{"kind":"table","id":"tb/xsfqxofq","slide":12,"name":"表格 6","rows":7,"cols":6,"preview":"项目 | 名称 | 名称 | 名称 | 名称 | 名称","bbox":[106.78,346.05,790.96,311.37]}
+{"kind":"table","id":"tb/q5o72tgv","slide":12,"name":"","rows":5,"cols":4,"preview":"setting | accuracy | sycophancy | elimination","bbox":[145,360,990,210]}
+{"kind":"notes","id":"nt/0epwyr","slide":12,"text":""}
+{"kind":"slide","id":"sl/vubj0x","slide":13,"title":"结果 5/5","textShapes":9}
+{"kind":"shape","id":"sh/298ryp4v","slide":13,"name":"矩形: 圆角 1","bbox":[-91.28,155.59,725.95,108.41]}
+{"kind":"shape","id":"sh/be103a9k","slide":13,"name":"文本框 84","bbox":[40.06,15,364.22,61.39]}
+{"kind":"shape","id":"sh/t8fmxoje","slide":13,"name":"矩形 17","bbox":[147.89,174.11,479.16,71.37]}
+{"kind":"shape","id":"sh/ypgfi1c7","slide":13,"name":"椭圆 25","bbox":[54.05,181.17,61.39,61.39]}
+{"kind":"shape","id":"sh/zqpwbmds","slide":13,"name":"矩形: 圆角 26","bbox":[-91.28,289.57,725.95,108.41]}
+{"kind":"shape","id":"sh/gvud87ut","slide":13,"name":"矩形 27","bbox":[147.89,308.09,479.16,71.37]}
+{"kind":"shape","id":"sh/1w3e1cve","slide":13,"name":"椭圆 28","bbox":[54.05,315.15,61.39,61.39]}
+{"kind":"shape","id":"sh/jqt0nadw","slide":13,"name":"矩形: 圆角 29","bbox":[-91.28,423.55,725.95,108.41]}
+{"kind":"shape","id":"sh/ipkze5wb","slide":13,"name":"矩形 30","bbox":[147.89,442.07,479.16,71.37]}
+{"kind":"shape","id":"sh/5cbipkv2","slide":13,"name":"椭圆 31","bbox":[54.05,449.13,61.39,61.39]}
+{"kind":"shape","id":"sh/kb2hgfeh","slide":13,"name":"矩形: 圆角 32","bbox":[-91.28,557.53,725.95,108.41]}
+{"kind":"shape","id":"sh/vm90jqx0","slide":13,"name":"矩形 33","bbox":[147.89,576.05,479.16,71.37]}
+{"kind":"shape","id":"sh/al0zalwf","slide":13,"name":"椭圆 34","bbox":[54.05,583.1,61.39,61.39]}
+{"kind":"shape","id":"sh/xobil0fq","slide":13,"name":"灯片编号占位符 35","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/xgji5krq","slide":13,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/qhozi1sv","slide":13,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/rixgr6tg","slide":13,"text":"结果 5/5","textPreview":"结果 5/5","textChars":6,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/tonad8fa","slide":13,"text":"Prompt-level mitigation 仍是最稳的可部署改进","textPreview":"Prompt-level mitigation 仍是最稳的可部署改进","textChars":34,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/snetk3yp","slide":13,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/6lwbitgj","slide":13,"bbox":[880,150,270,140]}
+{"kind":"textbox","id":"sh/hc7uhsf6","slide":13,"text":"最佳方法","textPreview":"最佳方法","textChars":4,"textLines":1,"bbox":[898,166,234,28]}
+{"kind":"textbox","id":"sh/gbytonyl","slide":13,"text":"anti_sycophancy","textPreview":"anti_sycophancy","textChars":15,"textLines":1,"bbox":[898,196,234,44]}
+{"kind":"textbox","id":"sh/fapsfixg","slide":13,"text":"不要仅因用户观点而同意","textPreview":"不要仅因用户观点而同意","textChars":11,"textLines":1,"bbox":[898,246,234,34]}
+{"kind":"shape","id":"sh/u9wbmdgv","slide":13,"bbox":[880,325,270,140]}
+{"kind":"textbox","id":"sh/xg3a5oz2","slide":13,"text":"迎合率下降","textPreview":"迎合率下降","textChars":5,"textLines":1,"bbox":[898,341,234,28]}
+{"kind":"textbox","id":"sh/wfutcjyh","slide":13,"text":"32.5% → 27.4%","textPreview":"32.5% → 27.4%","textChars":13,"textLines":1,"bbox":[898,371,234,44]}
+{"kind":"textbox","id":"sh/14je5s7u","slide":13,"text":"准确率提升到 48.1%","textPreview":"准确率提升到 48.1%","textChars":12,"textLines":1,"bbox":[898,421,234,34]}
+{"kind":"textbox","id":"sh/g3axcnq9","slide":13,"text":"结论：机制定位解释了问题来源；工程上，明确事实优先约束比简单 activation steering 更可靠。","textPreview":"结论：机制定位解释了问题来源；工程上，明确事实优先约束比简单 activation steering 更可靠。","textChars":55,"textLines":1,"bbox":[95,515,1050,66]}
+{"kind":"table","id":"tb/svmp0v6t","slide":13,"name":"","rows":6,"cols":4,"preview":"方法 | 准确率 | 迎合率 | 消除率","bbox":[70,140,760,300]}
+{"kind":"image","id":"im/jax4zaxc","slide":13,"name":"图片 110","bbox":[699.56,207.77,542.49,406.87]}
+{"kind":"notes","id":"nt/vubj0x","slide":13,"text":""}
+{"kind":"slide","id":"sl/farg2i","slide":14,"title":"归纳","textShapes":10}
+{"kind":"shape","id":"sh/sr25sz2d","slide":14,"name":"矩形: 圆角 5","bbox":[71.75,109.98,1133.81,590.4]}
+{"kind":"shape","id":"sh/l0ruhcjq","slide":14,"name":"文本框 84","bbox":[40.06,15,501.55,61.39]}
+{"kind":"shape","id":"sh/bmxoby1c","slide":14,"name":"矩形: 圆角 8","bbox":[438.44,453.62,741.74,182.53]}
+{"kind":"shape","id":"sh/alon2tkr","slide":14,"name":"矩形: 圆角 7","bbox":[438.44,164.73,741.74,182.53]}
+{"kind":"shape","id":"sh/wrypor2t","slide":14,"name":"文本框 113","bbox":[545.15,192.26,342.99,38.78]}
+{"kind":"shape","id":"sh/xs7qhwje","slide":14,"name":"文本框 114","bbox":[545.15,248.35,596.81,71.37]}
+{"kind":"shape","id":"sh/vqp8fm18","slide":14,"name":"直接连接符 116","bbox":[550.13,240.47,402.8,0]}
+{"kind":"shape","id":"sh/kvipsr25","slide":14,"name":"直接连接符 117","bbox":[550.13,240.47,36.94,0]}
+{"kind":"shape","id":"sh/5wrqlwja","slide":14,"name":"文本框 118","bbox":[550.13,481.15,342.99,38.78]}
+{"kind":"shape","id":"sh/tcnq5wbu","slide":14,"name":"文本框 119","bbox":[550.13,537.24,591.83,71.37]}
+{"kind":"shape","id":"sh/ra5o3mto","slide":14,"name":"直接连接符 121","bbox":[555.1,529.36,402.8,0]}
+{"kind":"shape","id":"sh/69c7ahc3","slide":14,"name":"直接连接符 122","bbox":[555.1,529.36,36.94,0]}
+{"kind":"shape","id":"sh/0vm5wj2p","slide":14,"name":"灯片编号占位符 1","placeholder":"slideNumber","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/fe5876tk","slide":14,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/edw7e1cz","slide":14,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/hk36xcbm","slide":14,"text":"归纳","textPreview":"归纳","textChars":2,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/wjup47u1","slide":14,"text":"从结果看，机制可解释性提供三层价值","textPreview":"从结果看，机制可解释性提供三层价值","textChars":17,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/mp8nedsj","slide":14,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/7q147i94","slide":14,"bbox":[105,150,485,128]}
+{"kind":"textbox","id":"sh/8ra5gnap","slide":14,"text":"发现问题","textPreview":"发现问题","textChars":4,"textLines":1,"bbox":[130,172,430,30]}
+{"kind":"textbox","id":"sh/9sjm9sra","slide":14,"text":"行为实验确认错误观点能改变输出，而不是普通答题波动。","textPreview":"行为实验确认错误观点能改变输出，而不是普通答题波动。","textChars":26,"textLines":1,"bbox":[130,214,425,54]}
+{"kind":"shape","id":"sh/utsnixsv","slide":14,"bbox":[650,150,485,128]}
+{"kind":"textbox","id":"sh/ve14bi9g","slide":14,"text":"解释问题","textPreview":"解释问题","textChars":4,"textLines":1,"bbox":[675,172,430,30]}
+{"kind":"textbox","id":"sh/wfa5kna1","slide":14,"text":"Logit Lens 与 Patching 把现象落到层级信号和因果表示。","textPreview":"Logit Lens 与 Patching 把现象落到层级信号和因果表示。","textChars":37,"textLines":1,"bbox":[675,214,425,54]}
+{"kind":"shape","id":"sh/hgjmdsrm","slide":14,"bbox":[105,320,485,128]}
+{"kind":"textbox","id":"sh/axo36tsr","slide":14,"text":"比较干预","textPreview":"比较干预","textChars":4,"textLines":1,"bbox":[130,342,430,30]}
+{"kind":"textbox","id":"sh/bix4zy9w","slide":14,"text":"Steering 与 prompt mitigation 的差距说明可解释不等于直接可控。","textPreview":"Steering 与 prompt mitigation 的差距说明可解释不等于直接可控。","textChars":45,"textLines":1,"bbox":[130,384,425,54]}
+{"kind":"shape","id":"sh/r2psnqho","slide":14,"bbox":[650,320,485,128]}
+{"kind":"textbox","id":"sh/61wbelg3","slide":14,"text":"指导扩展","textPreview":"指导扩展","textChars":4,"textLines":1,"bbox":[675,342,430,30]}
+{"kind":"textbox","id":"sh/t47ap0zu","slide":14,"text":"下一步应做 subject-specific vectors、ablation 和 SAE 特征级干预。","textPreview":"下一步应做 subject-specific vectors、ablation 和 SAE 特征级干预。","textChars":52,"textLines":1,"bbox":[675,384,425,54]}
+{"kind":"image","id":"im/4vep4jyl","slide":14,"name":"图片 110","bbox":[99.82,135.1,377.88,241.79]}
+{"kind":"image","id":"im/5wnqx4z6","slide":14,"name":"图片 2","bbox":[99.82,423.99,377.88,241.79]}
+{"kind":"notes","id":"nt/farg2i","slide":14,"text":""}
+{"kind":"slide","id":"sl/lc8r8g","slide":15,"title":"结论","textShapes":7}
+{"kind":"shape","id":"sh/kvydozat","slide":15,"name":"文本框 84","bbox":[224.38,301.84,831.24,116.33]}
+{"kind":"shape","id":"sh/jupwvu98","slide":15,"bbox":[44,112,1192,560]}
+{"kind":"shape","id":"sh/itgvmpsn","slide":15,"bbox":[34,24,1190,80]}
+{"kind":"textbox","id":"sh/l0nul0ru","slide":15,"text":"结论","textPreview":"结论","textChars":2,"textLines":1,"bbox":[70,30,260,24]}
+{"kind":"textbox","id":"sh/0zudcvap","slide":15,"text":"总结：解释性研究把“模型会错”推进为“知道怎样改”","textPreview":"总结：解释性研究把“模型会错”推进为“知道怎样改”","textChars":25,"textLines":1,"bbox":[70,54,1080,42]}
+{"kind":"shape","id":"sh/q5sbm187","slide":15,"bbox":[70,104,180,4]}
+{"kind":"shape","id":"sh/r61sv6ps","slide":15,"bbox":[145,145,990,66]}
+{"kind":"textbox","id":"sh/c7atobqd","slide":15,"text":"必要性：大模型更强但仍会迎合，安全评估不能只看最终准确率。","textPreview":"必要性：大模型更强但仍会迎合，安全评估不能只看最终准确率。","textChars":29,"textLines":1,"bbox":[180,163,920,32]}
+{"kind":"shape","id":"sh/d83axg7y","slide":15,"bbox":[145,243,990,66]}
+{"kind":"textbox","id":"sh/e9cbq18j","slide":15,"text":"定位结论：1.5B 的 Logit Lens 信号弱且偏早层，Patching 在 layer 26/23/22 最强。","textPreview":"定位结论：1.5B 的 Logit Lens 信号弱且偏早层，Patching 在 layer 26/23/22 最强。","textChars":60,"textLines":1,"bbox":[180,261,920,32]}
+{"kind":"shape","id":"sh/zulsz6p4","slide":15,"bbox":[145,341,990,66]}
+{"kind":"textbox","id":"sh/0vutsbqp","slide":15,"text":"干预结论：简单 steering 最佳消除率只有 0.9%，目前不足以作为主方案。","textPreview":"干预结论：简单 steering 最佳消除率只有 0.9%，目前不足以作为主方案。","textChars":41,"textLines":1,"bbox":[180,359,920,32]}
+{"kind":"shape","id":"sh/1w3a1g7u","slide":15,"bbox":[145,439,990,66]}
+{"kind":"textbox","id":"sh/ud8reh8z","slide":15,"text":"改进结论：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。","textPreview":"改进结论：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。","textChars":49,"textLines":1,"bbox":[180,457,920,32]}
+{"kind":"textbox","id":"sh/fyhsnmpk","slide":15,"text":"最终判断：机制可解释性不是装饰性解释，而是连接风险定位、因果验证与工程缓解的方法。","textPreview":"最终判断：机制可解释性不是装饰性解释，而是连接风险定位、因果验证与工程缓解的方法。","textChars":41,"textLines":1,"bbox":[155,560,970,46]}
+{"kind":"notes","id":"nt/lc8r8g","slide":15,"text":""}

@@ -1,6 +1,7 @@
 # LLM Sycophancy Locate-Steer-Improve
 
 本仓库用于复现和扩展大语言模型在 MMLU 事实性选择题中的 sycophancy（迎合错误用户观点）现象。当前版本已经从早期 smoke / 3000 条子集实验，整理为基于 `mmlu_raw` 全量数据的 Locate-Steer-Improve 链路，并补充了 Qwen2.5-0.5B 与 Qwen2.5-1.5B 的全量对照结果、中文报告和中文 PPT。
+**相较于原仓库，本次复现增加了 steer/improve 相关实验，进一步探索了性能改善的问题。**
 
 ## References
 - 原仓库地址 ： https://github.com/kaustpradalab/LLM-sycophancy
