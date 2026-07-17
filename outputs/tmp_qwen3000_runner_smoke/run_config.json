@@ -1,0 +1,26 @@
+{
+  "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "input_file": "D:\\MI_project\\outputs\\qwen_mmlu_3000.csv",
+  "max_examples": 4,
+  "num_examples": 4,
+  "batch_size": 2,
+  "patch_batch_size": 1,
+  "train_size": 2,
+  "layers": [
+    20,
+    22
+  ],
+  "alphas": [
+    0.0,
+    1.0
+  ],
+  "stages": [
+    "behavior",
+    "elimination",
+    "improve",
+    "logit_lens",
+    "patching",
+    "steer"
+  ],
+  "device": "cpu"
+}

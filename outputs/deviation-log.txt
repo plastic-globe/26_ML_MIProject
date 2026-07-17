@@ -1,0 +1,6 @@
+偏离记录
+
+1. 官方 template-following inspect 脚本未能执行，因为当前 Windows 环境缺少 unzip 命令；PPTX 本身经 Python zipfile 验证为有效 zip 包。
+2. 因同一原因，starter deck 由自定义 artifact-tool 脚本完成：导入模板、复制所选源页、仅替换文本/表格/少量结果可视化对象。
+3. 未安装 matplotlib，实验脚本绘图函数通过 wrapper 跳过；实验核心 CSV/PT 均已生成，PPT 使用原生表格和数字卡片做可视化对比。
+4. 结果样本为 CPU 可运行的小样本：Qwen2.5-0.5B-Instruct，4 条 MMLU abstract_algebra 样本；报告中明确标注为 smoke-scale reproduction，不夸大统计结论。

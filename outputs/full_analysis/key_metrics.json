@@ -1,0 +1,165 @@
+{
+  "num_examples": 14042,
+  "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "device": "cuda",
+  "baseline_opinion_sycophancy_rate": 0.692280301951289,
+  "plain_accuracy": 0.4391824526420738,
+  "best_prompt": {
+    "method": "prompt",
+    "setting": "anti_sycophancy",
+    "baseline_sycophantic_n": 9721,
+    "elimination_rate": 0.4791688097932312,
+    "recovered_accuracy_rate": 0.2062545005657854,
+    "overall_accuracy": 0.3033755875231448,
+    "overall_sycophancy_rate": 0.3928927503204671
+  },
+  "best_steering": {
+    "method": "steering",
+    "setting": "layer=20, alpha=-4.0",
+    "baseline_sycophantic_n": 9721,
+    "elimination_rate": 0.0638823166340911,
+    "recovered_accuracy_rate": 0.0255117786235983,
+    "overall_accuracy": 0.1762569434553482,
+    "overall_sycophancy_rate": 0.6827375017803732
+  },
+  "top_logit_lens": [
+    {
+      "condition": "opinion_only",
+      "layer": 21,
+      "n": 14042,
+      "accuracy": 0.1722689075630252,
+      "sycophancy_rate": 0.7113659022931207,
+      "p_answer": 0.213279910133884,
+      "p_opinion": 0.5652796783798605,
+      "opinion_minus_answer": 0.3519997682459764
+    },
+    {
+      "condition": "opinion_only",
+      "layer": 22,
+      "n": 14042,
+      "accuracy": 0.1710582538099986,
+      "sycophancy_rate": 0.6903574989317761,
+      "p_answer": 0.2250528604842614,
+      "p_opinion": 0.4961780463345677,
+      "opinion_minus_answer": 0.2711251858503062
+    },
+    {
+      "condition": "opinion_only",
+      "layer": 20,
+      "n": 14042,
+      "accuracy": 0.1918530123913972,
+      "sycophancy_rate": 0.6101694915254238,
+      "p_answer": 0.2245008365275602,
+      "p_opinion": 0.4800668030045578,
+      "opinion_minus_answer": 0.2555659664769976
+    },
+    {
+      "condition": "prefix_and_opinion",
+      "layer": 21,
+      "n": 14042,
+      "accuracy": 0.2168494516450648,
+      "sycophancy_rate": 0.6216350947158524,
+      "p_answer": 0.248440707953283,
+      "p_opinion": 0.4871126188235294,
+      "opinion_minus_answer": 0.2386719108702464
+    },
+    {
+      "condition": "prefix_and_opinion",
+      "layer": 22,
+      "n": 14042,
+      "accuracy": 0.2154963680387409,
+      "sycophancy_rate": 0.5931491240564022,
+      "p_answer": 0.2542196781868679,
+      "p_opinion": 0.4296868568394816,
+      "opinion_minus_answer": 0.1754671786526136
+    },
+    {
+      "condition": "prefix_and_opinion",
+      "layer": 20,
+      "n": 14042,
+      "accuracy": 0.2474718701039737,
+      "sycophancy_rate": 0.4620424440962826,
+      "p_answer": 0.2569723279710867,
+      "p_opinion": 0.4023991492401367,
+      "opinion_minus_answer": 0.14542682126905
+    },
+    {
+      "condition": "opinion_only",
+      "layer": 23,
+      "n": 14042,
+      "accuracy": 0.2270331861558182,
+      "sycophancy_rate": 0.5237145705739923,
+      "p_answer": 0.2511139779233727,
+      "p_opinion": 0.392904082657741,
+      "opinion_minus_answer": 0.1417901047343683
+    },
+    {
+      "condition": "prefix_and_opinion",
+      "layer": 23,
+      "n": 14042,
+      "accuracy": 0.2471157954707306,
+      "sycophancy_rate": 0.4806295399515738,
+      "p_answer": 0.2633948380878792,
+      "p_opinion": 0.3713722250078336,
+      "opinion_minus_answer": 0.1079773869199544
+    }
+  ],
+  "top_patching": [
+    {
+      "layer": 22,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 1.0845361338840622,
+      "mean_patch_delta": 1.7936507856430708
+    },
+    {
+      "layer": 21,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.98281018444666,
+      "mean_patch_delta": 1.6919248362056687
+    },
+    {
+      "layer": 20,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.981746915467882,
+      "mean_patch_delta": 1.6908615672268907
+    },
+    {
+      "layer": 23,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.7943167914826947,
+      "mean_patch_delta": 1.5034314432417033
+    },
+    {
+      "layer": 18,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.7593990489958695,
+      "mean_patch_delta": 1.468513700754878
+    },
+    {
+      "layer": 17,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.7522255731377296,
+      "mean_patch_delta": 1.4613402248967382
+    },
+    {
+      "layer": 15,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.7480591497649907,
+      "mean_patch_delta": 1.4571738015239994
+    },
+    {
+      "layer": 16,
+      "n": 14042,
+      "base_margin": -0.7091146517590087,
+      "patched_margin": 0.7472129943028059,
+      "mean_patch_delta": 1.4563276460618146
+    }
+  ]
+}

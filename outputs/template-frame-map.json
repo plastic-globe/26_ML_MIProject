@@ -1,0 +1,87 @@
+{
+  "outputSlides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 2,
+      "narrativeRole": "封面",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写标题、副标题、报告人和日期"
+    },
+    {
+      "outputSlide": 2,
+      "sourceSlide": 5,
+      "narrativeRole": "目录",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写四项目录标题"
+    },
+    {
+      "outputSlide": 3,
+      "sourceSlide": 9,
+      "narrativeRole": "项目问题与论文复现定位",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写章节号、标题和简述"
+    },
+    {
+      "outputSlide": 4,
+      "sourceSlide": 31,
+      "narrativeRole": "locate-steer-improve整体链路",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写时间轴节点和说明"
+    },
+    {
+      "outputSlide": 5,
+      "sourceSlide": 12,
+      "narrativeRole": "Locate 方法与关键层",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写标题、四个要点和右侧图文"
+    },
+    {
+      "outputSlide": 6,
+      "sourceSlide": 36,
+      "narrativeRole": "Locate 结果表",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写数据表和右侧结论"
+    },
+    {
+      "outputSlide": 7,
+      "sourceSlide": 16,
+      "narrativeRole": "Steer 方法与干预结果",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写双图文标题和正文"
+    },
+    {
+      "outputSlide": 8,
+      "sourceSlide": 36,
+      "narrativeRole": "Improve prompt mitigation 结果",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写数据表和右侧结论"
+    },
+    {
+      "outputSlide": 9,
+      "sourceSlide": 12,
+      "narrativeRole": "复现论文与可解释性框架",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写标题和四个要点"
+    },
+    {
+      "outputSlide": 10,
+      "sourceSlide": 16,
+      "narrativeRole": "个人分析、局限与拓展",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写两组图文内容"
+    },
+    {
+      "outputSlide": 11,
+      "sourceSlide": 54,
+      "narrativeRole": "结束页",
+      "reuseMode": "duplicate-slide",
+      "editTargets": "改写结语"
+    }
+  ],
+  "omittedSourceSlides": [
+    {
+      "sourceSlides": "1,3-4,6-8,10-11,13-15,17-30,32-35,37-53",
+      "reason": "未用于本次技术汇报叙事；保留模板原件不改动"
+    }
+  ]
+}

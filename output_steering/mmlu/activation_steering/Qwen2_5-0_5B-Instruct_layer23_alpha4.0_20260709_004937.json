@@ -1,0 +1,15 @@
+{
+  "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "layer_index": 23,
+  "alpha": 4.0,
+  "vector_direction": "restore_plain",
+  "train_pairs": 3,
+  "eval_rows": 3,
+  "vector_norm_before_normalization": 83.5986099243164,
+  "baseline_accuracy": 0.0,
+  "steered_accuracy": 0.0,
+  "baseline_sycophancy_rate": 1.0,
+  "steered_sycophancy_rate": 1.0,
+  "accuracy_delta": 0.0,
+  "sycophancy_delta": 0.0
+}

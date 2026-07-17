@@ -1,17 +1,16 @@
-import torch
-import pandas as pd
-import sys
-from pathlib import Path
-from tqdm import tqdm
-import time
-from datetime import datetime
 import argparse
 import logging
 import os
+import sys
+import time
 import traceback
-from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
-import uuid
-import numpy as np
+from datetime import datetime
+from pathlib import Path
+
+import pandas as pd
+import torch
+from tqdm import tqdm
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
@@ -19,264 +18,416 @@ if str(PROJECT_ROOT) not in sys.path:
 
 import config
 
-# Set up logging
-logging.basicConfig(filename='inference.log', level=logging.DEBUG,
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+LOG_PATH = PROJECT_ROOT / "inference_mechanistic.log"
+logging.basicConfig(
+    filename=str(LOG_PATH),
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Run LLaMA inference with chain-of-thought and/or logit computation using Transformers.")
-    parser.add_argument("--model_name", type=str, default="meta-llama/Llama-3.2-1B", help="Model name for inference")
-    parser.add_argument("--dataset", type=str, default="mmlu", choices=["mmlu"], help="Dataset to use (currently only 'mmlu' supported)")
-    parser.add_argument("--prefix_type", type=str, default="", 
-                        choices=["academic", "behavior", ""], 
-                        help="Type of prefix used (e.g., 'academic', 'behavior').")
-    parser.add_argument("--academic_level", type=str, default="", 
-                        choices=["beginner", "intermediate", "advanced", ""], 
-                        help="Academic level for academic prefix (beginner, intermediate, advanced). "
-                             "Only applies when prefix_type='academic'.")
-    parser.add_argument("--prefix_subtype", type=str, default="", 
-                        choices=["original", "mixing_subject", "third_pov", ""], 
-                        help="Subtype of prefix (original, mixing_subject, third_pov).")
-    parser.add_argument("--question_type", type=str, default="plain", 
-                        choices=["prefix_and_opinion", "opinion_only", "plain"], 
-                        help="Type of the questions: 'prefix_and_opinion' (prefix + opinion), "
-                             "'opinion_only' (just opinion), or 'plain' (no prefix or opinion).")
-    parser.add_argument("--input_filename", type=str, default="../../lib/plain/mmlu_plain.pkl",
-                        help="Input .pkl file with pre-constructed questions")
-    parser.add_argument("--full_question_column", type=str, default="full_question", 
-                        help="Name of the column containing the full question text in the input DataFrame")
-    parser.add_argument("--inference_mode", type=str, default="logit_and_cot", 
-                        choices=["logit_only", "logit_and_cot"], 
-                        help="Inference mode: 'logit_only' for logit-based answer selection without CoT, "
-                             "'logit_and_cot' for chain-of-thought generation and logit-based selection.")
-    parser.add_argument("--inference_layer", type=str, default="last", 
-                        choices=["", "all", "odd", "even", "last"], 
-                        help="Layers to compute logits: '' or 'all' for all layers, 'odd' for odd-numbered layers (including last), "
-                             "'even' for even-numbered layers (including last), 'last' for last layer only.")
-    parser.add_argument("--max_retries", type=int, default=3, help="Maximum number of retries for invalid answers")
+    parser = argparse.ArgumentParser(
+        description="Run mechanistic logit / CoT inference on pre-constructed question sets."
+    )
+    parser.add_argument(
+        "--model_name",
+        type=str,
+        default="meta-llama/Llama-3.2-1B",
+        help="Model name for inference",
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="mmlu",
+        choices=["mmlu"],
+        help="Dataset to use",
+    )
+    parser.add_argument(
+        "--prefix_type",
+        type=str,
+        default="",
+        choices=["", "academic", "behavior"],
+        help="Type of prefix used.",
+    )
+    parser.add_argument(
+        "--academic_level",
+        type=str,
+        default="",
+        choices=["", "beginner", "intermediate", "advanced"],
+        help="Academic level for academic prefix.",
+    )
+    parser.add_argument(
+        "--prefix_subtype",
+        type=str,
+        default="original",
+        choices=["", "original", "mixing_subject", "first_pov", "third_pov"],
+        help="Subtype of prefix.",
+    )
+    parser.add_argument(
+        "--question_type",
+        type=str,
+        default="plain",
+        choices=["prefix_and_opinion", "opinion_only", "plain"],
+        help="Type of the questions.",
+    )
+    parser.add_argument(
+        "--input_filename",
+        type=str,
+        default="../../lib/plain/mmlu_plain.pkl",
+        help="Input .pkl file with pre-constructed questions",
+    )
+    parser.add_argument(
+        "--full_question_column",
+        type=str,
+        default="full_question",
+        help="Column containing the full question text.",
+    )
+    parser.add_argument(
+        "--inference_mode",
+        type=str,
+        default="logit_and_cot",
+        choices=["logit_only", "logit_and_cot"],
+        help="Whether to compute only logits or also generate CoT.",
+    )
+    parser.add_argument(
+        "--inference_layer",
+        type=str,
+        default="last",
+        choices=["all", "odd", "even", "last"],
+        help="Layers used for logit extraction.",
+    )
+    parser.add_argument(
+        "--max_retries",
+        type=int,
+        default=3,
+        help="Maximum number of retries for invalid answers.",
+    )
+    parser.add_argument(
+        "--require_gpu",
+        action="store_true",
+        help="Fail immediately if CUDA is not available.",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional row limit for smoke tests. Omit for full runs.",
+    )
     return parser.parse_args()
 
+
 def is_valid_answer(answer):
-    """Check if the answer is a single uppercase letter."""
-    return isinstance(answer, str) and len(answer) == 1 and answer.isupper() and answer.isalpha()
+    return isinstance(answer, str) and len(answer) == 1 and answer in "ABCD"
+
 
 def get_layer_indices(total_layers, inference_layer):
-    """Determine which layer indices to process based on inference_layer argument."""
-    if inference_layer in ["", "all"]:
+    if inference_layer == "all":
         return list(range(total_layers))
-    elif inference_layer == "odd":
+    if inference_layer == "odd":
         return [i for i in range(total_layers) if i % 2 == 1 or i == total_layers - 1]
-    elif inference_layer == "even":
+    if inference_layer == "even":
         return [i for i in range(total_layers) if i % 2 == 0 or i == total_layers - 1]
-    elif inference_layer == "last":
+    if inference_layer == "last":
         return [total_layers - 1]
+    raise ValueError(f"Invalid inference_layer: {inference_layer}")
+
+
+def load_tokenizer(model_name, hf_token):
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name,
+        token=hf_token,
+        trust_remote_code=False,
+    )
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token = tokenizer.eos_token
+    return tokenizer
+
+
+def load_model(model_name, hf_token):
+    common_kwargs = {
+        "pretrained_model_name_or_path": model_name,
+        "token": hf_token,
+        "trust_remote_code": False,
+    }
+
+    if torch.cuda.is_available():
+        strategies = [
+            {"torch_dtype": "auto", "device_map": "auto"},
+            {"torch_dtype": torch.float16},
+            {},
+        ]
     else:
-        raise ValueError(f"Invalid inference_layer: {inference_layer}")
+        strategies = [
+            {"torch_dtype": torch.float32},
+            {},
+        ]
 
-def process_question(question, tokenizer, model, inference_mode, inference_layer, question_index):
+    errors = []
+    for strategy in strategies:
+        try:
+            logging.info("Trying model load strategy: %s", strategy)
+            model = AutoModelForCausalLM.from_pretrained(
+                **common_kwargs,
+                **strategy,
+            )
+            if "device_map" not in strategy:
+                device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+                model = model.to(device)
+            model.eval()
+            return model
+        except Exception as exc:
+            errors.append((strategy, str(exc), traceback.format_exc()))
+            logging.error(
+                "Model load strategy failed: %s\n%s",
+                strategy,
+                traceback.format_exc(),
+            )
+
+    messages = ["All model loading strategies failed:"]
+    for strategy, message, stack in errors:
+        messages.append(f"Strategy {strategy}: {message}")
+        messages.append(stack)
+    raise RuntimeError("\n".join(messages))
+
+
+def build_prompt(question, inference_mode):
+    if inference_mode == "logit_and_cot":
+        return (
+            f"Question: ||{question}||\n"
+            "Think step by step before answering. "
+            "At the end, output your final answer in the form {A}, {B}, {C}, or {D}."
+        )
+    return (
+        f"Question: ||{question}||\n"
+        "Respond with exactly one uppercase letter (A, B, C, or D) and nothing else.\n"
+        "Answer:"
+    )
+
+
+def get_model_input_device(model, fallback_device):
+    if hasattr(model, "hf_device_map") and model.hf_device_map:
+        first_device = next(iter(model.hf_device_map.values()))
+        if isinstance(first_device, str) and first_device not in {"cpu", "disk"}:
+            return torch.device(first_device)
+        if isinstance(first_device, int):
+            return torch.device(f"cuda:{first_device}")
     try:
-        logging.debug(f"Processing question at index {question_index}: '{question[:50]}...'")
+        return next(model.parameters()).device
+    except StopIteration:
+        return fallback_device
+
+
+def parse_cot_answer(raw_output):
+    if not raw_output:
+        return ""
+
+    stripped = raw_output.strip()
+    for marker in ["{A}", "{B}", "{C}", "{D}"]:
+        if marker in stripped:
+            return marker[1]
+
+    for char in reversed(stripped):
+        if char in "ABCD":
+            return char
+    return ""
+
+
+def get_answer_token_ids(tokenizer):
+    token_ids = {}
+    for letter in "ABCD":
+        variants = [
+            tokenizer.encode(letter, add_special_tokens=False),
+            tokenizer.encode(f" {letter}", add_special_tokens=False),
+        ]
+        valid_ids = [encoded[0] for encoded in variants if len(encoded) == 1]
+        if not valid_ids:
+            raise ValueError(f"Could not find single-token encoding for answer option {letter}.")
+        token_ids[letter] = sorted(set(valid_ids))
+    return token_ids
+
+
+def compute_layer_logits(model, hidden_states, answer_token_ids, layer_indices):
+    layer_logits = {}
+    for layer_idx in layer_indices:
+        hidden_state = hidden_states[layer_idx + 1][:, -1, :]
+        projected = model.lm_head(hidden_state)
+        answer_scores = {}
+        for letter, token_id_candidates in answer_token_ids.items():
+            values = [projected[0, token_id].item() for token_id in token_id_candidates]
+            answer_scores[letter] = max(values)
+        layer_logits[f"layer_{layer_idx}"] = answer_scores
+    return layer_logits
+
+
+def select_answer_from_last_layer(layer_logits):
+    if not layer_logits:
+        return "Error"
+
+    last_layer_name = sorted(
+        layer_logits.keys(),
+        key=lambda name: int(name.split("_")[1]),
+    )[-1]
+    logits_tensor = torch.tensor([layer_logits[last_layer_name][letter] for letter in "ABCD"])
+    probabilities = torch.softmax(logits_tensor, dim=0)
+    return "ABCD"[int(torch.argmax(probabilities).item())]
+
+
+def process_question(
+    question,
+    tokenizer,
+    model,
+    model_input_device,
+    inference_mode,
+    inference_layer,
+    question_index,
+    answer_token_ids,
+):
+    try:
         if not isinstance(question, str) or not question.strip():
-            raise ValueError(f"Invalid question at index {question_index}: must be a non-empty string, got '{question}'")
+            raise ValueError(
+                f"Invalid question at index {question_index}: expected non-empty string, got {question!r}"
+            )
 
-        # Set prompt based on mode
-        if inference_mode == "logit_and_cot":
-            prompt = (f"Question: ||{question}||\n"
-                      "You MUST explain your detailed reasoning step by step to determine the correct answer. "
-                      "After explaining your reasoning, provide your final answer in the format {A}, {B}, {C}, or {D}. "
-                      "The answer must be exactly one uppercase letter (A, B, C, D) enclosed in curly braces. "
-                      "Do not include any additional text after the curly braces.")
-        else:  # logit_only
-            prompt = f"Question: ||{question}||\nRespond with exactly one uppercase letter (A, B, C, D) and nothing else.\nAnswer:"
+        prompt = build_prompt(question, inference_mode)
+        inputs = tokenizer(
+            prompt,
+            return_tensors="pt",
+            truncation=True,
+            max_length=4096,
+        )
+        inputs = {key: value.to(model_input_device) for key, value in inputs.items()}
 
-        # Tokenize the prompt
-        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-        input_ids = inputs["input_ids"]
-        attention_mask = inputs["attention_mask"]
-
-        # Generate CoT output for logit_and_cot mode
         raw_output = ""
         if inference_mode == "logit_and_cot":
-            logging.info(f"Generating CoT for index {question_index}: {prompt[:100]}...")
-            outputs = model.generate(
-                input_ids,
-                attention_mask=attention_mask,
-                max_new_tokens=1000,
+            generated = model.generate(
+                **inputs,
+                max_new_tokens=512,
                 temperature=0.0,
-                top_p=1.0,
                 do_sample=False,
-                return_dict_in_generate=True,
-                output_scores=True
+                pad_token_id=tokenizer.pad_token_id,
             )
-            decoded_output = tokenizer.decode(outputs.sequences[0][input_ids.shape[1]:], skip_special_tokens=True)
-            if "||" in prompt:
-                parts = (prompt + decoded_output).split("||")
-                raw_output = parts[2].lstrip() if len(parts) >= 3 else decoded_output
-            else:
-                raw_output = decoded_output
-            logging.debug(f"Raw model output: {raw_output}")
+            generated_tokens = generated[0][inputs["input_ids"].shape[-1]:]
+            raw_output = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
 
-        # Compute logits for answer selection
-        logging.info(f"Computing logits for index {question_index}: {prompt[:100]}...")
         with torch.no_grad():
-            outputs = model(input_ids, attention_mask=attention_mask, output_hidden_states=True)
-            hidden_states = outputs.hidden_states  # Tuple of hidden states for each layer
-            logits = outputs.logits[:, -1, :]  # Logits for the last token
+            outputs = model(
+                **inputs,
+                output_hidden_states=True,
+            )
 
-        # Map answer tokens
-        answer_tokens = {letter: tokenizer.encode(letter, add_special_tokens=False)[0] for letter in 'ABCD'}
-        space_answer_tokens = {letter: tokenizer.encode(f" {letter}", add_special_tokens=False)[0] for letter in 'ABCD'}
-        logging.debug(f"Answer token IDs: {answer_tokens}")
-        logging.debug(f"Space-prefixed answer token IDs: {space_answer_tokens}")
-
-        # Initialize layer-wise logits storage
-        total_layers = len(hidden_states) - 1  # Number of transformer layers
+        hidden_states = outputs.hidden_states
+        total_layers = len(hidden_states) - 1
         layer_indices = get_layer_indices(total_layers, inference_layer)
-        layer_logits = {f"layer_{i}": {'A': float('-inf'), 'B': float('-inf'), 'C': float('-inf'), 'D': float('-inf')} 
-                        for i in layer_indices}
+        layer_logits = compute_layer_logits(model, hidden_states, answer_token_ids, layer_indices)
 
-        # Process logits for each specified layer
-        for layer_idx in layer_indices:
-            # Get hidden states for the layer (last token)
-            hidden_state = hidden_states[layer_idx + 1][:, -1, :]  # +1 because hidden_states includes input embeddings
-            # Project hidden state to logits using the model's language model head
-            layer_logits_raw = model.lm_head(hidden_state)
-            answer_logits = layer_logits[f"layer_{layer_idx}"]
-
-            # Extract logits for A, B, C, D
-            for letter in 'ABCD':
-                token_id = answer_tokens[letter]
-                space_token_id = space_answer_tokens[letter]
-                logit = max(
-                    layer_logits_raw[0, token_id].item(),
-                    layer_logits_raw[0, space_token_id].item()
-                )
-                answer_logits[letter] = logit
-
-            logging.debug(f"Layer {layer_idx} logits for A, B, C, D: {answer_logits}")
-
-        # Use last layer logits for answer selection
-        last_layer_logits = layer_logits[f"layer_{total_layers-1}"]
-        answer_probs = {}
-        for letter, logprob in last_layer_logits.items():
-            answer_probs[letter] = torch.exp(torch.tensor(logprob)).item() if logprob != float('-inf') else 0.0
-
-        total_prob = sum(answer_probs.values())
-        if total_prob > 0:
-            answer_probs = {letter: prob / total_prob for letter, prob in answer_probs.items()}
+        if inference_mode == "logit_and_cot":
+            answer = parse_cot_answer(raw_output)
+            if not is_valid_answer(answer):
+                answer = select_answer_from_last_layer(layer_logits)
         else:
-            answer_probs = {letter: 0.25 for letter in 'ABCD'}
+            answer = select_answer_from_last_layer(layer_logits)
 
-        selected_answer = max(answer_probs, key=answer_probs.get)
-        logging.debug(f"Answer based on probabilities: {selected_answer}, Probabilities: {answer_probs}")
-
-        if not is_valid_answer(selected_answer):
-            logging.warning(f"Invalid answer at index {question_index}: '{selected_answer}' for question: '{question[:50]}...'")
+        if not is_valid_answer(answer):
+            logging.warning(
+                "Invalid answer at index %s. Raw output: %r",
+                question_index,
+                raw_output,
+            )
             return "Error", layer_logits, raw_output
 
-        return selected_answer, layer_logits, raw_output
-
-    except Exception as e:
-        logging.error(f"Error processing question at index {question_index} '{question[:50]}...': {str(e)}\n{traceback.format_exc()}")
+        return answer, layer_logits, raw_output
+    except Exception as exc:
+        logging.error(
+            "Error processing question at index %s: %s\n%s",
+            question_index,
+            exc,
+            traceback.format_exc(),
+        )
         return "Error", {}, "Error in processing"
+
+
+def build_output_dir(dataset, question_type, prefix_type, prefix_subtype, academic_level):
+    parts = [PROJECT_ROOT / "output_inference" / dataset]
+    if question_type:
+        parts.append(Path(question_type))
+    if prefix_type:
+        parts.append(Path(prefix_type))
+        if prefix_subtype:
+            parts.append(Path(prefix_subtype))
+        if prefix_type == "academic" and academic_level:
+            parts.append(Path(academic_level))
+
+    output_dir = parts[0]
+    for part in parts[1:]:
+        output_dir = output_dir / part
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return output_dir
+
 
 def main():
     args = parse_args()
-    model_name = args.model_name
-    dataset = args.dataset
-    prefix_type = args.prefix_type
-    academic_level = args.academic_level
-    prefix_subtype = args.prefix_subtype
-    question_type = args.question_type
-    input_filename = args.input_filename
-    full_question_column = args.full_question_column
-    inference_mode = args.inference_mode
-    inference_layer = args.inference_layer
-    max_retries = args.max_retries
 
-    # Validation
-    if academic_level and prefix_type != "academic":
+    if args.academic_level and args.prefix_type != "academic":
         raise ValueError("The --academic_level argument is only applicable when prefix_type='academic'.")
-    if question_type == "prefix_and_opinion" and not prefix_type:
-        raise ValueError("For 'prefix_and_opinion' question_type, a prefix_type (e.g., 'academic' or 'behavior') must be specified.")
+
+    if args.question_type == "prefix_and_opinion" and not args.prefix_type:
+        raise ValueError(
+            "For 'prefix_and_opinion' question_type, a prefix_type must be specified."
+        )
 
     hf_token = config.HF_TOKEN
     if not hf_token:
         raise ValueError("HF_TOKEN is not set in config.py.")
 
+    if args.require_gpu and not torch.cuda.is_available():
+        raise RuntimeError(
+            "GPU is required but CUDA is not available. In Colab, set Runtime > Change runtime type > GPU."
+        )
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
+    logging.info("Using device: %s", device)
+
+    input_path = Path(args.input_filename)
+    if not input_path.is_absolute():
+        input_path = (Path.cwd() / input_path).resolve()
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+
     try:
         print("Loading tokenizer...")
-        logging.info("Loading tokenizer...")
-        tokenizer = AutoTokenizer.from_pretrained(
-            "meta-llama/Meta-Llama-3.1-8B-Instruct",  # Update to correct model ID
-            token=hf_token,
-            trust_remote_code=True
-        )
+        tokenizer = load_tokenizer(args.model_name, hf_token)
 
-        print("Loading Transformers model...")
-        logging.info("Loading Transformers model...")
-        # Load configuration explicitly to verify
-        model_config = AutoConfig.from_pretrained(
-            model_name,
-            token=hf_token,
-            trust_remote_code=True,
-            force_download=True,
-            resume_download=False
-        )
-        print(f"Model configuration: {model_config}")
-        logging.info(f"Model configuration: {model_config}")
-        
-        
-        
-        
-        
-        from transformers import modeling_utils
-        if not hasattr(modeling_utils, "ALL_PARALLEL_STYLES") or modeling_utils.ALL_PARALLEL_STYLES is None:
-            modeling_utils.ALL_PARALLEL_STYLES = ["tp", "none","colwise",'rowwise']
+        print("Loading model...")
+        model = load_model(args.model_name, hf_token)
+        model_input_device = get_model_input_device(model, device)
+        answer_token_ids = get_answer_token_ids(tokenizer)
 
-            
-        # Patch configuration to avoid NoneType error
-        if not hasattr(model_config, 'parallel_style') or model_config.parallel_style is None:
-            model_config.parallel_style = "none"
-            logging.warning("Patched config.parallel_style to 'none'.")
-        if not hasattr(model_config, '_fsdp_config') or model_config._fsdp_config is None:
-            model_config._fsdp_config = {}  # Set to empty dict to disable FSDP
-            logging.warning("Patched config._fsdp_config to empty dict.")
-        if not hasattr(model_config, 'model_parallel') or model_config.model_parallel is None:
-            model_config.model_parallel = False  # Disable model parallelism
-            logging.warning("Patched config.model_parallel to False.")
+        print(f"Loading DataFrame from {input_path}...")
+        df = pd.read_pickle(input_path)
+        if args.limit is not None:
+            df = df.head(args.limit).copy()
+            print(f"Row limit enabled: {len(df)} rows")
 
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            config=model_config,
-            token=hf_token,
-            trust_remote_code=True,
-            torch_dtype=torch.float16,
-            device_map=None,
-            force_download=True,
-            resume_download=False
-        )
-        model.eval()
-        print(f"Loading DataFrame from {input_filename}...")
-        logging.info(f"Loading DataFrame from {input_filename}...")
-        df = pd.read_pickle(input_filename)
         print(f"Loaded DataFrame with {len(df)} entries.")
-        logging.info(f"Loaded DataFrame with {len(df)} entries.")
-        print(f"DataFrame columns: {df.columns}")
-        logging.info(f"DataFrame columns: {df.columns}")
+        logging.info("Loaded DataFrame with %s entries from %s", len(df), input_path)
 
-        if full_question_column not in df.columns:
-            raise ValueError(f"Input DataFrame must contain a '{full_question_column}' column.")
+        if args.full_question_column not in df.columns:
+            raise ValueError(
+                f"Input DataFrame must contain a '{args.full_question_column}' column."
+            )
 
-        print(f"Validating '{full_question_column}' column...")
-        logging.info(f"Validating '{full_question_column}' column...")
-        invalid_questions = df[full_question_column].apply(lambda x: not isinstance(x, str) or not x.strip())
+        invalid_questions = df[args.full_question_column].apply(
+            lambda value: not isinstance(value, str) or not value.strip()
+        )
         if invalid_questions.any():
             invalid_indices = invalid_questions[invalid_questions].index.tolist()
-            invalid_samples = df.loc[invalid_indices, full_question_column].head().to_dict()
-            raise ValueError(f"Found {len(invalid_indices)} invalid questions in '{full_question_column}' column: {invalid_samples}")
+            raise ValueError(
+                f"Found invalid questions in column '{args.full_question_column}', indices: {invalid_indices[:10]}"
+            )
 
-        # Initialize DataFrame columns
         if "model_answer" not in df.columns:
             df["model_answer"] = None
         if "layer_logits" not in df.columns:
@@ -284,104 +435,131 @@ def main():
         if "raw_output" not in df.columns:
             df["raw_output"] = None
 
-        print("Testing with first 5 questions...")
-        logging.info("Testing with first 5 questions...")
-        for idx in df.index[:5]:
-            question = df.at[idx, full_question_column]
-            answer, layer_logits, raw_out = process_question(
-                question, tokenizer, model, inference_mode, inference_layer, idx
+        print("Testing with first 3 questions...")
+        for idx in df.index[:3]:
+            question = df.at[idx, args.full_question_column]
+            answer, layer_logits, raw_output = process_question(
+                question=question,
+                tokenizer=tokenizer,
+                model=model,
+                model_input_device=model_input_device,
+                inference_mode=args.inference_mode,
+                inference_layer=args.inference_layer,
+                question_index=idx,
+                answer_token_ids=answer_token_ids,
             )
-            print(f"Test question at index {idx}: Answer = {answer}, Layer Logits = {layer_logits}, Raw Output = {raw_out[:100]}...")
-            logging.info(f"Test question at index {idx}: Answer = {answer}, Layer Logits = {layer_logits}, Raw Output = {raw_out}")
-            torch.cuda.empty_cache()
+            print(
+                f"Test index {idx}: answer={answer}, "
+                f"layers={list(layer_logits.keys())[:5]}, raw_output={raw_output[:120]!r}"
+            )
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
 
         print("Processing all questions...")
-        logging.info("Processing all questions...")
         for idx in tqdm(df.index, total=len(df), desc="Initial processing"):
             if not is_valid_answer(df.at[idx, "model_answer"]):
-                question = df.at[idx, full_question_column]
-                answer, layer_logits, raw_out = process_question(
-                    question, tokenizer, model, inference_mode, inference_layer, idx
+                question = df.at[idx, args.full_question_column]
+                answer, layer_logits, raw_output = process_question(
+                    question=question,
+                    tokenizer=tokenizer,
+                    model=model,
+                    model_input_device=model_input_device,
+                    inference_mode=args.inference_mode,
+                    inference_layer=args.inference_layer,
+                    question_index=idx,
+                    answer_token_ids=answer_token_ids,
                 )
                 df.at[idx, "model_answer"] = answer
                 df.at[idx, "layer_logits"] = layer_logits
-                df.at[idx, "raw_output"] = raw_out
-                torch.cuda.empty_cache()
+                df.at[idx, "raw_output"] = raw_output
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
 
         retry_count = 0
-        while retry_count < max_retries:
+        while retry_count < args.max_retries:
             invalid_indices = df.index[
-                df["model_answer"].isna() |
-                (df["model_answer"] == "") |
-                (df["model_answer"] == "Error") |
-                (~df["model_answer"].apply(is_valid_answer))
+                df["model_answer"].isna()
+                | (df["model_answer"] == "")
+                | (df["model_answer"] == "Error")
+                | (~df["model_answer"].apply(is_valid_answer))
             ].tolist()
 
             if not invalid_indices:
-                print("All entries have valid answers!")
-                logging.info("All entries have valid answers!")
+                print("All entries have valid answers.")
                 break
 
-            print(f"Retry {retry_count + 1}/{max_retries}: Found {len(invalid_indices)} entries with invalid answers.")
-            logging.info(f"Retry {retry_count + 1}/{max_retries}: Found {len(invalid_indices)} entries with invalid answers.")
+            print(
+                f"Retry {retry_count + 1}/{args.max_retries}: "
+                f"Found {len(invalid_indices)} invalid answers."
+            )
             for idx in tqdm(invalid_indices, desc=f"Retry {retry_count + 1}"):
-                question = df.at[idx, full_question_column]
-                answer, layer_logits, raw_out = process_question(
-                    question, tokenizer, model, inference_mode, inference_layer, idx
+                question = df.at[idx, args.full_question_column]
+                answer, layer_logits, raw_output = process_question(
+                    question=question,
+                    tokenizer=tokenizer,
+                    model=model,
+                    model_input_device=model_input_device,
+                    inference_mode=args.inference_mode,
+                    inference_layer=args.inference_layer,
+                    question_index=idx,
+                    answer_token_ids=answer_token_ids,
                 )
                 df.at[idx, "model_answer"] = answer
                 df.at[idx, "layer_logits"] = layer_logits
-                df.at[idx, "raw_output"] = raw_out
-                torch.cuda.empty_cache()
+                df.at[idx, "raw_output"] = raw_output
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
 
             retry_count += 1
             time.sleep(1)
 
-        # Construct output directory: output_inference/{dataset}/{question_type}/{prefix_type}/{prefix_subtype}/{academic_level}
-        output_dir_parts = [f"output_inference/{dataset}"]
-        if question_type:
-            output_dir_parts.append(question_type)
-        if prefix_type:
-            output_dir_parts.append(prefix_type)
-            output_dir_parts.append(prefix_subtype)
-            if prefix_type == "academic":
-                output_dir_parts.append(academic_level)
-        output_dir = os.path.join(*[part for part in output_dir_parts if part])
-
-        os.makedirs(output_dir, exist_ok=True)
-
-        model_short_name = model_name.split("/")[-1].replace(".", "_")
+        output_dir = build_output_dir(
+            dataset=args.dataset,
+            question_type=args.question_type,
+            prefix_type=args.prefix_type,
+            prefix_subtype=args.prefix_subtype,
+            academic_level=args.academic_level,
+        )
+        model_short_name = args.model_name.split("/")[-1].replace(".", "_")
         timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-        inference_mode_str = 'cot' if inference_mode == 'logit_and_cot' else 'logit'
-        # Include inference_layer in the filename
-        output_filename = f"{output_dir}/{model_short_name}_{inference_mode_str}_{inference_layer}_{timestamp_str}.pkl"
+        inference_mode_str = "cot" if args.inference_mode == "logit_and_cot" else "logit"
+        output_filename = (
+            output_dir
+            / f"{model_short_name}_{inference_mode_str}_{args.inference_layer}_{timestamp_str}.pkl"
+        )
 
-        invalid_count = len(df[
-            df["model_answer"].isna() |
-            (df["model_answer"] == "") |
-            (df["model_answer"] == "Error") |
-            (~df["model_answer"].apply(is_valid_answer))
-        ])
+        invalid_count = len(
+            df[
+                df["model_answer"].isna()
+                | (df["model_answer"] == "")
+                | (df["model_answer"] == "Error")
+                | (~df["model_answer"].apply(is_valid_answer))
+            ]
+        )
         if invalid_count > 0:
-            print(f"Warning: {invalid_count} entries still have invalid answers after {max_retries} retries.")
-            logging.warning(f"{invalid_count} entries still have invalid answers after {max_retries} retries.")
+            print(
+                f"Warning: {invalid_count} entries still have invalid answers "
+                f"after {args.max_retries} retries."
+            )
+            logging.warning(
+                "%s entries still have invalid answers after retries.",
+                invalid_count,
+            )
         else:
-            print("All entries successfully populated with valid answers!")
-            logging.info("All entries successfully populated with valid answers!")
+            print("All entries successfully populated with valid answers.")
 
-        print(f"Saving to {output_filename}...")
-        logging.info(f"Saving to {output_filename}...")
         df.to_pickle(output_filename)
-        print(f"Completed and saved to {output_filename} with {len(df)} rows!")
-        logging.info(f"Completed and saved to {output_filename} with {len(df)} rows!")
-
-    except Exception as e:
-        print(f"An error occurred: {str(e)}\n{traceback.format_exc()}")
-        logging.error(f"An error occurred: {str(e)}\n{traceback.format_exc()}")
+        print(f"Saved results to {output_filename}")
+        logging.info("Saved mechanistic inference results to %s", output_filename)
+    except Exception as exc:
+        print(f"An error occurred: {exc}")
+        print(traceback.format_exc())
+        logging.error("An error occurred: %s\n%s", exc, traceback.format_exc())
         raise
-
     finally:
-        torch.cuda.empty_cache()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
 
 if __name__ == "__main__":
     main()

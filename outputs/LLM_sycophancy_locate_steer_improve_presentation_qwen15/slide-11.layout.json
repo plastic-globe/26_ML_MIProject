@@ -1,0 +1,1078 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/kys5ck",
+    "id": "kys5ck",
+    "slide": 11,
+    "layoutId": "/ppt/slideLayouts/slideLayout22.xml",
+    "layoutName": "9_自定义版式",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "南京大学智能科学与技术学院-紫色",
+    "colors": {
+      "accent1": "#6A005F",
+      "accent2": "#814B7E",
+      "accent3": "#384980",
+      "accent4": "#61719D",
+      "accent5": "#525252",
+      "accent6": "#F0BE60",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#778495",
+      "lt2": "#F0F0F0",
+      "hlink": "#4472C4",
+      "folHlink": "#BFBFBF"
+    },
+    "fontScheme": {
+      "name": "5bd2275d-4d3c-462e-aa53-aa0a69df9280",
+      "majorFont": {
+        "latinTypeface": "微软雅黑",
+        "eastAsianTypeface": "微软雅黑"
+      },
+      "minorFont": {
+        "latinTypeface": "微软雅黑",
+        "eastAsianTypeface": "微软雅黑"
+      }
+    },
+    "typefaces": [
+      "Microsoft YaHei",
+      "微软雅黑"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout22.xml",
+      "name": "9_自定义版式",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/17",
+          "id": "17",
+          "name": "图片 4",
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "contentType": "image/jpeg",
+          "imageCrop": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0
+          },
+          "asset": {
+            "assetId": "/ppt/media/image25.jpeg",
+            "contentType": "image/jpeg",
+            "byteLength": 714349
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image25.jpeg",
+            "contentType": "image/jpeg",
+            "byteLength": 714349
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/8",
+          "id": "8",
+          "name": "矩形 7",
+          "bbox": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "lineWidth": 0
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/9",
+          "id": "9",
+          "name": "矩形 8",
+          "bbox": [
+            -0.02,
+            257.33,
+            1280,
+            205.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "fillColor": "accent1",
+          "lineWidth": 0
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/14",
+          "id": "14",
+          "name": "圆角矩形 33",
+          "bbox": [
+            1185.91,
+            32.67,
+            54.18,
+            4.5
+          ],
+          "rotation": 0,
+          "verticalFlip": true,
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "fillColor": "accent1",
+          "lineWidth": 0
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/15",
+          "id": "15",
+          "name": "圆角矩形 34",
+          "bbox": [
+            1206.92,
+            50.72,
+            33.17,
+            4.5
+          ],
+          "rotation": 0,
+          "verticalFlip": true,
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "fillColor": "accent6",
+          "lineWidth": 0
+        },
+        {
+          "order": 6,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/16",
+          "id": "16",
+          "name": "圆角矩形 33",
+          "bbox": [
+            1197.25,
+            41.69,
+            42.84,
+            4.5
+          ],
+          "rotation": 0,
+          "verticalFlip": true,
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "verticalAlignment": "middle"
+          },
+          "fillColor": "accent2",
+          "lineWidth": 0
+        },
+        {
+          "order": 7,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/18",
+          "id": "18",
+          "name": "图片 2",
+          "bbox": [
+            39.91,
+            41.9,
+            156.53,
+            49.64
+          ],
+          "rotation": 0,
+          "contentType": "image/png",
+          "asset": {
+            "assetId": "/ppt/media/image10.png",
+            "contentType": "image/png",
+            "byteLength": 174793
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image10.png",
+            "contentType": "image/png",
+            "byteLength": 174793
+          }
+        },
+        {
+          "order": 8,
+          "kind": "image",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/19",
+          "id": "19",
+          "name": "图片 3",
+          "bbox": [
+            205.85,
+            41.69,
+            239.49,
+            49.85
+          ],
+          "rotation": 0,
+          "contentType": "image/png",
+          "asset": {
+            "assetId": "/ppt/media/image11.png",
+            "contentType": "image/png",
+            "byteLength": 51009
+          },
+          "fillImage": {
+            "assetId": "/ppt/media/image11.png",
+            "contentType": "image/png",
+            "byteLength": 51009
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/2",
+          "id": "2",
+          "name": "标题占位符 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版标题样式",
+          "textPreview": "单击此处编辑母版标题样式",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版标题样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版标题样式"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/3",
+          "id": "3",
+          "name": "文本占位符 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": "单击此处编辑母版文本样式\n二级\n三级\n四级\n五级",
+          "textPreview": "单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单击此处编辑母版文本样式",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单击此处编辑母版文本样式"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "二级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "二级"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "三级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "三级"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "四级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "四级"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "五级",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "五级"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/4",
+          "id": "4",
+          "name": "日期占位符 3",
+          "bbox": [
+            88,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/5",
+          "id": "5",
+          "name": "页脚占位符 4",
+          "bbox": [
+            424,
+            667.33,
+            432,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster1.xml/6",
+          "id": "6",
+          "name": "灯片编号占位符 5",
+          "bbox": [
+            904,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sjudwbmt",
+      "id": "85",
+      "name": "文本框 84",
+      "bbox": [
+        224.38,
+        301.84,
+        831.24,
+        116.33
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "微软雅黑",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "none",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ilwn6l8",
+      "id": "86",
+      "bbox": [
+        44,
+        112,
+        1192,
+        560
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6hcvul43",
+      "id": "87",
+      "bbox": [
+        34,
+        24,
+        1190,
+        80
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#FFFFFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5g3elg3i",
+      "id": "88",
+      "bbox": [
+        70,
+        30,
+        260,
+        24
+      ],
+      "geometry": "rect",
+      "text": "总结",
+      "textPreview": "总结",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "Microsoft YaHei",
+        "color": "#78006E",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "总结"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "总结",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "typeface": "Microsoft YaHei",
+            "color": "#78006E",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "总结",
+              "fontSize": 14,
+              "typeface": "Microsoft YaHei",
+              "color": "#78006E",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kfudsbmx",
+      "id": "89",
+      "bbox": [
+        70,
+        54,
+        1040,
+        42
+      ],
+      "geometry": "rect",
+      "text": "结论：1.5B 降低了迎合，但 prompt 约束仍最稳",
+      "textPreview": "结论：1.5B 降低了迎合，但 prompt 约束仍最稳",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "Microsoft YaHei",
+        "color": "#252525",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "结论：1.5B 降低了迎合，但 prompt 约束仍最稳"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "结论：1.5B 降低了迎合，但 prompt 约束仍最稳",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Microsoft YaHei",
+            "color": "#252525",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "结论：1.5B 降低了迎合，但 prompt 约束仍最稳",
+              "fontSize": 30,
+              "typeface": "Microsoft YaHei",
+              "color": "#252525",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a98j6dgj",
+      "id": "90",
+      "bbox": [
+        70,
+        104,
+        180,
+        4
+      ],
+      "geometry": "rect",
+      "fillColor": "#78006E",
+      "lineColor": "#78006E",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bahkfix4",
+      "id": "91",
+      "bbox": [
+        145,
+        145,
+        990,
+        66
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4EAF5",
+      "lineColor": "#E4CEE6",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbq18ny9",
+      "id": "92",
+      "bbox": [
+        180,
+        163,
+        920,
+        32
+      ],
+      "geometry": "rect",
+      "text": "现象层面：opinion-only 仍把迎合率从 14.7% 提高到 32.5%。",
+      "textPreview": "现象层面：opinion-only 仍把迎合率从 14.7% 提高到 32.5%。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Microsoft YaHei",
+        "color": "#252525",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "现象层面：opinion-only 仍把迎合率从 14.7% 提高到 32.5%。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "现象层面：opinion-only 仍把迎合率从 14.7% 提高到 32.5%。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Microsoft YaHei",
+            "color": "#252525",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "现象层面：opinion-only 仍把迎合率从 14.7% 提高到 32.5%。",
+              "fontSize": 23,
+              "typeface": "Microsoft YaHei",
+              "color": "#252525",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xcz2hsfu",
+      "id": "93",
+      "bbox": [
+        145,
+        243,
+        990,
+        66
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E4CEE6",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m5oj2dg7",
+      "id": "94",
+      "bbox": [
+        180,
+        261,
+        920,
+        32
+      ],
+      "geometry": "rect",
+      "text": "定位层面：Logit Lens 信号弱且偏早层；patching 在 layer 26/23/22 最强。",
+      "textPreview": "定位层面：Logit Lens 信号弱且偏早层；patching 在 layer 26/23/22 最强。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Microsoft YaHei",
+        "color": "#252525",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "定位层面：Logit Lens 信号弱且偏早层；patching 在 layer 26/23/22 最强。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "定位层面：Logit Lens 信号弱且偏早层；patching 在 layer 26/23/22 最强。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Microsoft YaHei",
+            "color": "#252525",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "定位层面：Logit Lens 信号弱且偏早层；patching 在 layer 26/23/22 最强。",
+              "fontSize": 23,
+              "typeface": "Microsoft YaHei",
+              "color": "#252525",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6xkbyxs",
+      "id": "95",
+      "bbox": [
+        145,
+        341,
+        990,
+        66
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F4EAF5",
+      "lineColor": "#E4CEE6",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o76143yd",
+      "id": "96",
+      "bbox": [
+        180,
+        359,
+        920,
+        32
+      ],
+      "geometry": "rect",
+      "text": "干预层面：steering 最佳消除率只有 0.9%，远弱于 prompt mitigation。",
+      "textPreview": "干预层面：steering 最佳消除率只有 0.9%，远弱于 prompt mitigation。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Microsoft YaHei",
+        "color": "#252525",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "干预层面：steering 最佳消除率只有 0.9%，远弱于 prompt mitigation。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "干预层面：steering 最佳消除率只有 0.9%，远弱于 prompt mitigation。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Microsoft YaHei",
+            "color": "#252525",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "干预层面：steering 最佳消除率只有 0.9%，远弱于 prompt mitigation。",
+              "fontSize": 23,
+              "typeface": "Microsoft YaHei",
+              "color": "#252525",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98z2d8fy",
+      "id": "97",
+      "bbox": [
+        145,
+        439,
+        990,
+        66
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#E4CEE6",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehojytgb",
+      "id": "98",
+      "bbox": [
+        180,
+        457,
+        920,
+        32
+      ],
+      "geometry": "rect",
+      "text": "改进层面：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。",
+      "textPreview": "改进层面：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Microsoft YaHei",
+        "color": "#78006E",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "改进层面：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "改进层面：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Microsoft YaHei",
+            "color": "#78006E",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "改进层面：anti_sycophancy 把迎合率降到 27.4%，并把准确率提升到 48.1%。",
+              "fontSize": 23,
+              "typeface": "Microsoft YaHei",
+              "color": "#78006E",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zixk7yxw",
+      "id": "99",
+      "bbox": [
+        155,
+        560,
+        970,
+        46
+      ],
+      "geometry": "rect",
+      "text": "后续拓展：按 subject 学习 steering vectors，比较 ablation 与 SAE 特征级干预，并加入 3B/7B 模型做规模曲线。",
+      "textPreview": "后续拓展：按 subject 学习 steering vectors，比较 ablation 与 SAE 特征级干预，并加入 3B/7B 模型做规模曲线。",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "Microsoft YaHei",
+        "color": "#78006E",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "后续拓展：按 subject 学习 steering vectors，比较 ablation 与 SAE 特征级干预，并加入 3B/7B"
+          },
+          {
+            "index": 2,
+            "text": "模型做规模曲线。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "后续拓展：按 subject 学习 steering vectors，比较 ablation 与 SAE 特征级干预，并加入 3B/7B 模型做规模曲线。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Microsoft YaHei",
+            "color": "#78006E",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "后续拓展：按 subject 学习 steering vectors，比较 ablation 与 SAE 特征级干预，并加入 3B/7B 模型做规模曲线。",
+              "fontSize": 21,
+              "typeface": "Microsoft YaHei",
+              "color": "#78006E",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

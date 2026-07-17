@@ -1,0 +1,21 @@
+{
+  "framework": "transformers",
+  "model_alias": "qwen2.5-0.5b",
+  "model_name": "",
+  "input_file": "D:\\MI_project\\qwen_mmlu_small.csv",
+  "output_dir": "colab_outputs\\cpu_qwen05_mmlu_locate_steer_improve_20260714",
+  "max_examples": 4,
+  "train_size": 2,
+  "layer_index": -1,
+  "alphas": "0,2",
+  "mitigation_modes": "none,truth_priority,anti_sycophancy,verify_then_answer",
+  "max_length": 512,
+  "seed": 42,
+  "hf_token": "",
+  "skip_steer": false,
+  "device": "cpu",
+  "resolved_model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "backend_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "n_layers": 24,
+  "num_examples": 4
+}

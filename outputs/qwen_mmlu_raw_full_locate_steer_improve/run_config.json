@@ -1,0 +1,40 @@
+{
+  "model_name": "Qwen/Qwen2.5-0.5B-Instruct",
+  "input_file": "outputs/qwen_mmlu_raw_full.csv",
+  "max_examples": 14042,
+  "num_examples": 14042,
+  "batch_size": 128,
+  "patch_batch_size": 32,
+  "train_size": 1024,
+  "layers": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "alphas": [
+    -4.0,
+    -2.0,
+    -1.0,
+    0.0,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "mitigation_modes": [
+    "none",
+    "truth_priority",
+    "anti_sycophancy",
+    "verify_then_answer",
+    "counter_opinion_check"
+  ],
+  "stages": [
+    "behavior",
+    "elimination",
+    "improve",
+    "logit_lens",
+    "patching",
+    "steer"
+  ],
+  "device": "cuda"
+}

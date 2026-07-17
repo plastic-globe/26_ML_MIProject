@@ -1,0 +1,52 @@
+QA notes
+
+Data:
+- Full source was corrected from the earlier 3000-row subset to mmlu_raw full data.
+- Source: D:\26_ML_MIProject\raw_data\mmlu_raw.pkl, 14042 rows.
+- Full experiment CSV: outputs/qwen_mmlu_raw_full.csv.
+- The CSV was built by merging lib/plain/mmlu_plain.pkl with lib/opinion_only/prefix/mmlu_opinion_only.pkl on uid.
+- Validation: 14042 rows, 57 subjects, zero rows where answer == opinion.
+
+Remote run:
+- Server: user-authorized AutoDL/SeetaCloud SSH target.
+- Model: Qwen/Qwen2.5-0.5B-Instruct.
+- Framework: PyTorch + Hugging Face Transformers.
+- Device: CUDA.
+- HF main site was unreachable from the server; run was restarted with HF_ENDPOINT=https://hf-mirror.com.
+- A GPU dtype mismatch in logit lens was fixed by aligning hidden states to lm_head.weight.dtype.
+
+Full output verification:
+- run_config.json reports max_examples=14042 and num_examples=14042.
+- locate_behavior.csv: 42126 rows = 14042 * 3 conditions.
+- locate_layer_logit_lens.csv: 1011024 rows = 14042 * 3 conditions * 24 layers.
+- steer_sweep.csv: 393176 rows = 14042 * 4 layers * 7 alphas.
+- improve_prompt_mitigation.csv: 70210 rows = 14042 * 5 mitigation modes.
+- activation_patching_summary.csv: 337008 rows = 14042 * 24 layers.
+
+Presentation:
+- Full deck: outputs/LLM_sycophancy_locate_steer_improve_presentation_full.pptx.
+- Template source: inputs/template_zky_purple.pptx.
+- The deck was generated with artifact-tool by duplicating template slides and writing full-data content.
+- Rendered slide PNGs are in outputs/LLM_sycophancy_locate_steer_improve_presentation_full/.
+- Full contact sheet: outputs/final-contact-sheet-full.png.
+- Visible template placeholder text was cleared. Remaining placeholder hits in inspect output are master/layout metadata or zero-size slide-number placeholders.
+- slides_test.py still raises a RuntimeError in this Windows environment when the artifact-tool render helper returns JSON, but it did render 11 slide images. Manual visual QA was performed from the exported PNGs and contact sheet.
+
+Known limitations:
+- The steering vector is a simple mean vector over 1024 training rows and layers 20-23. It is directionally meaningful but weaker than prompt mitigation.
+- Full ablation and SAE-level feature intervention were not run; they are listed as follow-up extensions.
+
+Qwen2.5-1.5B rerun:
+- The larger-model rerun used Qwen/Qwen2.5-1.5B-Instruct on the same full mmlu_raw input, not the 3000-row subset.
+- Output directory: outputs/qwen15_mmlu_raw_full_locate_steer_improve.
+- Report: outputs/report_zh_full_qwen15.md.
+- Analysis directory: outputs/full_analysis_qwen15.
+- run_config.json reports max_examples=14042 and num_examples=14042.
+- Verified rows: locate_behavior.csv 42126; locate_layer_logit_lens.csv 1179528; steer_sweep.csv 393176; improve_prompt_mitigation.csv 70210; activation_patching_summary.csv 393176.
+- Behavioral summary: plain accuracy 57.5%, plain sycophancy 14.7%; opinion-only accuracy 47.1%, opinion-only sycophancy 32.5%.
+- Interpretation note: Logit Lens opinion-minus-answer gaps are weak and mostly early-layer; activation patching most strongly strengthens the already-positive correct-minus-opinion margin at layers 26, 23, and 22.
+- Chinese PPT: outputs/LLM_sycophancy_locate_steer_improve_presentation_qwen15.pptx.
+- PPT QA renders: outputs/LLM_sycophancy_locate_steer_improve_presentation_qwen15/.
+- PPT contact sheet: outputs/final-contact-sheet-qwen15.png.
+- slides_test.py could not run because this local Python environment is missing pdf2image; artifact-tool rendered all 11 slide PNGs, and a Pillow contact sheet was generated from those PNGs for visual QA.
+- The qwen15 presentation builder writes the PPTX, inspect file, and QA PNGs successfully, but the artifact-tool export path still returns a non-zero process status in this Windows environment; final verification is based on the delivered PPTX plus the 11 rendered slide PNGs.
